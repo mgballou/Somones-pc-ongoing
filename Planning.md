@@ -11,10 +11,10 @@ https://files.slack.com/files-pri/T0351JZQ0-F050H11P0MQ/screen_shot_2023-03-27_a
 
 (Final style subject to change)
 
-Git Owner - Matthew Ballou
-Project Manager - Matthew Ballou
-Researcher - Ciaran Kearney
-Documentation - Ciaran Kearney
-Frontend - Anthony Blalock
-Backend - Matthew Ballou
-Designer - Ciaran Kearney
+Git Owner - Matthew Ballou  
+Project Manager - Matthew Ballou  
+Researcher - Ciaran Kearney  
+Documentation - Ciaran Kearney  
+Frontend - Anthony Blalock  
+Backend - Matthew Ballou  
+Designer - Ciaran Kearney  
