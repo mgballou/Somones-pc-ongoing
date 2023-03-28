@@ -4,7 +4,8 @@ const Team = require('../models/Team')
 
 module.exports = {
     index,
-    new: newTeam
+    new: newTeam,
+   
 }
 
 function index(req, res, next) {
