@@ -7,5 +7,4 @@ router.get('/', teamsCtrl.index)
 
 router.get('/new', teamsCtrl.new)
 
-
 module.exports = router
