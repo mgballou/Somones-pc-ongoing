@@ -22,6 +22,7 @@ function newTeam(req, res, next){
 }
 
 function create(req, res, next){
+    console.log(req.user)
     req.body.user = req.user._id
     Team.create(req.body)
     .then(function(newTeam){
