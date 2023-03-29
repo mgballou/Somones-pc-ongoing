@@ -6,6 +6,7 @@
 
 <% teams.forEach(t => { %>
     <p> <%=t.name%></p>
+    <a href="/teams/<%=t._id%>">Team Details</a>
 <% }) %>
 
 <button>Edit</button>

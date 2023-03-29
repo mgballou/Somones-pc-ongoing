@@ -23,8 +23,7 @@ function newTeam(req, res, next){
 }
 
 function create(req, res, next){
-    console.log(req.user)
-    req.body.user = req.user._id
+        req.body.user = req.user._id
     Team.create(req.body)
     .then(function(newTeam){
         console.log(newTeam)
@@ -37,5 +36,13 @@ function create(req, res, next){
 }
 
 function show(req, res) {
-    res.render('teams/show', {title: 'User Teams'})
+    Team.findById(req.params.id)
+    .then(function(team){
+        res.render('teams/show', {team, title: 'User Teams'})
+
+    })
+    .catch(function(err){
+        console.log(err)
+        res.redirect('/teams')
+    })
 }
