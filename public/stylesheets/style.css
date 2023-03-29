@@ -1,5 +1,5 @@
 *{
-  /* border: solid red 3px; */
+  border: solid red 1px;
 }
 
 
@@ -9,14 +9,13 @@
   max-height: 100vh;
   max-width: 100vw;
   border: solid black 2px;
-}
+} */
 
 body {
   max-height: 100vh;
   max-width: 100vw;
   border: solid black 2px;
-  /* overflow: hidden; */
-/* } */
+ } 
 
 a {
   color: hsl(0, 0%, 0%);
