@@ -1,5 +1,10 @@
+*{
+  border: solid red 3px;
+}
+
+
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,14 +18,20 @@ a {
   align-items: center;
   height: auto;
   margin-top: 0;
-  padding: 15px;
+  /* padding: 15px; */
   background-color: #63e668;
+  color: #000000;
 }
-
+/* 
 .nav-global a {
   color: #000000;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.3em;
-  margin-left: 5%;
+  
+} */
+
+.img-home {
+  height: 70vh;
+  width: 70vw;
 }

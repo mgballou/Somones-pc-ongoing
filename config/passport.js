@@ -1,6 +1,6 @@
 const passport = require('passport')
 const User = require('../models/User')
-const GoogleStrategy = require('passport-google-oauth2').Strategy
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 
 passport.use(new GoogleStrategy(
     {
@@ -24,7 +24,7 @@ passport.use(new GoogleStrategy(
                     email: profile.emails[0].value,
                     avatar: profile.photos[0].value
                 })} 
-                
+                return cb(null,user)
             } catch (err) {
 
                 return cb(err)
