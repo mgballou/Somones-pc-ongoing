@@ -5,7 +5,8 @@ const Team = require('../models/Team')
 module.exports = {
     index,
     new: newTeam,
-    create
+    create,
+    show
 }
 
 function index(req, res, next) {
@@ -33,4 +34,8 @@ function create(req, res, next){
         console.log(err)
         res.redirect('/teams')
     })
+}
+
+function show(req, res) {
+    res.render('teams/show', {title: 'User Teams'})
 }

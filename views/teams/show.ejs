@@ -1,17 +1,34 @@
-<%- include('./partials/header')%>
+<%- include('../partials/header')%>
 
-    <form action="/teams" method="POST">
+
+<div class="img">
+    <img class ="img-home" src ="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
+</div>
+
+    <form action="" method="POST">
         <div>Team #</div>
 
-        <div>#1 Pokemon</div>
-        <div>#2 Pokemon</div>
-        <div>#3 Pokemon</div>
-        <div>#4 Pokemon</div>
-        <div>#5 Pokemon</div>
-        <div>#6 Pokemon</div>
+        <div>#1 Pokemon
+            <input type="text" name="pokemon1">
+        </div>
+        <div>#2 Pokemon
+            <input type="text" name="pokemon2">
+        </div>
+        <div>#3 Pokemon
+            <input type="text" name="pokemon3">
+        </div>
+        <div>#4 Pokemon
+            <input type="text" name="pokemon4">
+        </div>
+        <div>#5 Pokemon
+            <input type="text" name="pokemon5">
+        </div>
+        <div>#6 Pokemon
+            <input type="text" name="pokemon6">
+        </div>
 
-        <button>CONFIRM</button>
+        <button>Add Pokemon</button>
 
     </form>
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
