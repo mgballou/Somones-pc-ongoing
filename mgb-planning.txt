@@ -93,3 +93,5 @@ adds that pokemon to the team
 once you have six pokemon in your team, the box view closes, or grays out, something 
 
 /pokemon/:id/edit - can edit details about one specific pokemon 
+
+!
