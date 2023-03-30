@@ -82,7 +82,7 @@ a {
 .show-img-form {
   display: grid;
   max-height: 80vh;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: [first] 40% [line2] 60%;
 }
 
 /* IMAGE */
@@ -147,15 +147,18 @@ a {
 .pokeTeamName {
   font-family: 'Press Start 2P', cursive;
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
   border: black solid 2px;
 }
 
 .pokeTeam {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: 'Press Start 2P', cursive;
   font-size: 10px;
   padding: 5px;
+
 }
 
 .pokeTeam>button {
@@ -163,6 +166,7 @@ a {
 }
 
 .show-form {
+  width: auto;
   margin: 10px 10px;
 }
 
@@ -177,6 +181,18 @@ a {
   height: 30px;
   width: 30px;
   margin: 5px 0 0 5px;
+}
+
+.edit-img {
+  display: flex;
+  height: 10vh;
+  width: 10vw;
+  border: solid black 1px;
+  border-end-end-radius: 20px;
+}
+
+.two-buttons {
+  display: flex;
 }
 
 #nav {
@@ -199,6 +215,9 @@ a {
   justify-content: space-around;
 }
 
+#input {
+  height: 40px;
+}
 
 
 
