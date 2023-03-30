@@ -1,9 +1,28 @@
 <%- include('../partials/header')%>
 
+    <nav class="nav-global">
 
-<div class="img">
-    <img class ="img-home" src ="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
-</div>
+        <div class="show-nav-bar">
+            <div id="nav">
+                <img class="user-sprite"><a href="https://pokemondb.net/pokedex/bulbasaur"><img
+                        src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif"
+                        alt="Bulbasaur"></a>[LOGGED IN USER]</img>
+            </div>
+            <div id="nav">
+                <a href="/logout">LOG OUT</a>
+            </div>
+            <!-- <div id="nav">
+            <a href="/auth/google" class="login">LOG IN</a>            
+        </div> -->
+            <div id="nav">
+                <a href="/teams" class="fake-login">FAKE LOG IN</a>
+            </div>
+            <div id="nav">
+                <a href="/">HOME</a>
+            </div>
+            <div id="nav">
+                <a href="/teams/new">NEW TEAM</a>
+            </div>
 
     <form action="/teams/<%=team._id%>/pokemon" method="POST">
         <div>Team #</div>
@@ -11,23 +30,63 @@
         <div>#1 Pokemon
             <input type="text" name="pokemon1">
         </div>
-        <div>#2 Pokemon
-            <input type="text" name="pokemon2">
-        </div>
-        <div>#3 Pokemon
-            <input type="text" name="pokemon3">
-        </div>
-        <div>#4 Pokemon
-            <input type="text" name="pokemon4">
-        </div>
-        <div>#5 Pokemon
-            <input type="text" name="pokemon5">
-        </div>
-        <div>#6 Pokemon
-            <input type="text" name="pokemon6">
+
+    </nav>
+
+    <div class="show-img-form">
+
+        <div class="img">
+            <img class="img-home"
+                src="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
         </div>
 
-        <button type="submit">Add Pokemon</button>
+        <div class="show-form">
+
+            <form action="" method="POST">
+
+                <div class="pokeTeamName">Team: </div>
+
+                <div class="pokeTeam">#1: Kabuto
+                    <a href="https://pokemondb.net/pokedex/kabuto"><img
+                            src="https://img.pokemondb.net/sprites/black-white/anim/normal/kabuto.gif" alt="Kabuto"></a>
+                    <input type="text" name="pokemon1" id="input">
+                </div>
+
+                <div class="pokeTeam">#2: Charizard
+                    <a href="https://pokemondb.net/pokedex/charizard"><img height="43px" width="41px" src="https://img.pokemondb.net/sprites/black-white/anim/shiny/charizard.gif" alt="Charizard"></a>
+                    <input type="text" name="pokemon2" id="input">
+                </div>
+
+                <div class="pokeTeam">Pokemon #3:
+                    <a href=""><img height="43px" width="41px" ></a>
+                    <input type="text" name="pokemon3" id="input">
+                </div>
+
+                <div class="pokeTeam">Pokemon #4:
+                    <a href=""><img height="43px" width="41px" ></a>
+                    <input type="text" name="pokemon4" id="input">
+                </div>
+
+                <div class="pokeTeam">Pokemon #5:
+                    <a href=""><img height="43px" width="41px" ></a>
+                    <input type="text" name="pokemon5" id="input">
+                </div>
+
+                <div class="pokeTeam">Pokemon #6:
+                    <a href=""><img height="43px" width="41px" ></a>
+                    <input type="text" name="pokemon6" id="input">
+                </div>
+
+                <div class="two-buttons">
+                    <button type="submit"><img class="edit-img" src="https://www.kindpng.com/picc/m/716-7168753_icon-button-edit-png-transparent-png.png"></button>
+                    <button type="sumbit" name="addPokemon" class="show-button">Add Pokemon</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+        <button>Add Pokemon</button>
 
     </form>
 

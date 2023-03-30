@@ -1,16 +1,43 @@
 <%- include("../partials/header")%>
 
-<h1>Welcome to {USERNAME}'s PC.</h1>
+    <nav class="nav-global">
 
-<div class="img">
-    <img class ="img-home" src ="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
-</div>
+        <div class="new-nav-bar">
+            <div id="nav">
+                <img class="user-sprite"><a href="https://pokemondb.net/pokedex/bulbasaur"><img
+                        src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif"
+                        alt="Bulbasaur"></a>[LOGGED IN USER]</img>
+            </div>
+            <div id="nav">
+                <a href="/logout">LOG OUT</a>
+            </div>
+            <!-- <div id="nav">
+            <a href="/auth/google" class="login">LOG IN</a>            
+        </div> -->
+            <!-- <div id="nav">
+                <a href="/teams" class="fake-login">FAKE LOG IN</a>
+            </div> -->
+            <div id="nav">
+            <a href="/">HOME</a>                
+        </div>
+        <div id="nav">
+            <a href="/teams/new">NEW TEAM</a>
+        </div>
 
-<form action="/teams" method="POST">
-    <label>Enter Team Name:
-    <input type="text" name="name"></input>
-</label>
-<button type="submit" >Next</button>
-</form>
+        </div>
 
-<%- include("../partials/footer")%>
+    </nav>
+
+    <div class="new-img-form">
+        <img class="img-home"
+            src="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
+
+        <form class="new-form" action="/teams" method="POST">
+            <label id="team-name">Enter Team New Name:
+                <input type="text" name="name" class="new-input"></input>
+            </label><br>
+            <button type="submit" class="new-button">Next</button>
+        </form>
+    </div>
+
+    <%- include("../partials/footer")%>
