@@ -1,14 +1,17 @@
 # Someones-PC
 The Best Pokemon Box system ever invented
 
-An app that can be used to create, name and store your  team in Pokemon.
+An app that can be used to create, name and store your teams and custom Pokemon.
 
-You can create as many teams as you like and store them with any Pokemon up to the most recent generation of Pokemon.
+Once you open the app, ensure you log in to save your teams and select your favourite pokemon! 
+
+You can create as many teams as you like and store them with any Pokemon up to the most recent generation!
 
 The initial index page will display a list of your teams showing you the sprite of each pokemon within your named team.
 
-Once you click on your desired team, It will then display further information about each pokemon that you have selected, including their attacks, HP, stats etc. 
+Fill your box with pokemon and customize their stats, attacks, held items and names for use in your teams.
 
-All of this data will be generated on selection however it can be edited to match the team you currently own in game.
+
+
 
 Created by Matthew Ballou, Anthony Blalock and Ciaran Kearney
