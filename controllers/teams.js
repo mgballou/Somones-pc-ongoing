@@ -1,4 +1,5 @@
 const Team = require('../models/Team')
+const Pokemon = require('../models/Pokemon')
 
 
 
@@ -7,7 +8,8 @@ module.exports = {
     new: newTeam,
     create,
     show,
-    delete: destroy
+    delete: destroy,
+    update
 }
 
 function index(req, res, next) {
@@ -42,10 +44,19 @@ function create(req, res, next){
 }
 
 function show(req, res) {
+    let foundTeam
     Team.findById(req.params.id)
     .populate('pokemon')
     .then(function(team){
-        res.render('teams/show', {team, title: 'User Teams'})
+        return foundTeam = team
+        
+    })
+    .then(function(team){
+        return Pokemon.find({ _id: { $nin: team.pokemon }, 'user': req.user._id })
+
+    })
+    .then(function(allPokemon){
+        res.render('teams/show', {team: foundTeam, title: 'User Teams', allPokemon})
 
     })
     .catch(function(err){
@@ -67,3 +78,7 @@ function destroy(req, res){
 
 }
 
+function update(req, res){
+    console.log(req.body)
+    res.redirect('/teams')
+}

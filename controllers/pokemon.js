@@ -6,18 +6,26 @@ let endpoint
 
 module.exports = {
     create,
-    delete: removePokemon,
-    update
+    delete: destroy,
+    update,
+    index,
+    new: newPokemon,
+    edit
 }
 
 function create(req, res) {
     // req.body.user = req.user._id
-    console.log(req.body)
-    let pokeArray = Object.values(req.body)
+    // console.log(req.body)
+    // let pokeArray = Object.values(req.body)
     let foundPokemon
-    console.log(pokeArray)
-    pokeArray.forEach(pokemon => {
-        endpoint = pokemon.toLowerCase()
+    // console.log(pokeArray)
+
+    if (typeof(req.body) !== Number){
+        endpoint = req.body.name.toLowerCase()
+
+    } else {
+        endpoint = req.body.name
+    }
         axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
             .then(function (response) {
                 foundPokemon = {
@@ -28,50 +36,84 @@ function create(req, res) {
                 }
                 Pokemon.create(foundPokemon)
             })
-            .then(function(newPokemon){
-                Team.find(req.params.id)
-                .then(function(foundTeam){
-                    foundTeam.pokemon.push(newPokemon._id)
-                })
+            .then(function (newPokemon) {
+                console.log(newPokemon)
+                res.redirect('/pokemon')
             })
-    })
-    res.redirect(`/teams/${req.params.id}`)
+            .catch(function(err){
+                console.log(err)
+                res.redirect('/pokemon/new')
+            })
+                
+   
+   
 
 }
+
 
 
 function removePokemon(req, res) {
     let pokeId = req.params.id
-    Team.find({pokemon: pokeId})
-    .then(function(team){
-        team.pokemon.pull(pokeId)
-        return team.save()
-    })
-    .then(function(newTeam){
-        res.redirect(`/teams/${newTeam._id}`)
+    Team.find({ pokemon: pokeId })
+        .then(function (team) {
+            team.pokemon.pull(pokeId)
+            return team.save()
+        })
+        .then(function (newTeam) {
+            res.redirect(`/teams/${newTeam._id}`)
+        })
+        .catch(function (err) {
+            console.log(err)
+            res.redirect('/teams')
+        })
+}
+
+function update(req, res) {
+    
+    Pokemon.findById(req.params.id)
+        .then(function (foundPokemon) {
+            foundPokemon.nickname = req.body.nickname
+            return foundPokemon.save()
+        })
+        .then(function () {
+            res.redirect(`/pokemon`)
+        })
+        .catch(function (err) {
+            console.log(err)
+            res.redirect(`/pokemon`)
+        })
+}
+
+
+
+function index(req, res) {
+    Pokemon.find({ 'user': req.user._id })
+        .then(function (pokemon) {
+            res.render('pokemon/index', { pokemon, title: 'All Your Pokemon' })
+        })
+}
+
+
+function newPokemon(req, res){
+    res.render('pokemon/new', {title: 'Create a new pokemon'})
+}
+
+function edit(req, res){
+    Pokemon.findById({_id: req.params.id})
+    .then(function(pokemon){
+        // console.log(pokemon)
+        res.render('pokemon/edit', {pokemon, title: "Edit Pokemon Details"})
     })
     .catch(function(err){
         console.log(err)
-        res.redirect('/teams')
+        res.redirect('/pokemon')
     })
 }
 
-function update(req, res){
-    let referencedTeamId
-    Team.find({pokemon: foundPokemon})
-    .then(function(team){        
-        referencedTeamId = team._id
-    })
-    Pokemon.find(req.params.id)
-    .then(function(foundPokemon){
-        foundPokemon.nickname = req.body.nickname
-        return foundPokemon.save()
-    })
-        .then(function(){
-        res.redirect(`/teams/${referencedTeamId}`)
-    })
-    .catch(function(err){
-        console.log(err)
-        res.redirect(`/teams/${referencedTeamId}`)
+function destroy(req, res){
+    Pokemon.deleteOne(req.body.id)
+    .then(function(results){
+        console.log(results)
+        res.redirect('/pokemon')
     })
 }

@@ -1,5 +1,20 @@
 Teamname == The Mac
 ---------------------------------------------------------
+color codes for banner;
+
+Normal: AAAA99      Grass: 77CC55       Ground: DDBB55
+Fire: FF4422        Ice: 66CCFF         Flying: 8899FF
+Water: 3399FF       Fighting: BB5544    Psychic: FF5599
+Electric: FFCC33    Poison: 995599      Bug: AABB22
+Rock: BBAA66        Ghost: 6666BB       Dragon: 7766EE
+Dark: 775544        Steel: AAAABB       Fairy: EEAAEE
+
+
+Fix header
+view pokemon 
+ICE - Shiny
+ICE - fave poke
+
 Shiny sprites?
 
 -> on the code that generates image. 
@@ -36,31 +51,31 @@ Select favourite pokemon
 -> once logged in, copy code for selecting the pokemon in the teams, and instead it'll generate just a sprite for use in the nav bar.
 -> Possible to store this in the object for the user? 
 ---------------------------------------------------------
-
-
-
 Have the user select their favourite pokemon as their Avatar 
 
 -> insert text field on nav bar, when submitted generate sprite next to user's name.
 -> User's name to be taken when logged in and replace log in option.
 -> log out moved to footer? 
-
 ---------------------------------------------------------
-
 Have the colorset to match user's avatar
 
--> Going to be way too difficult.
-
+-> Depending on the type of the pokemon, change the nav bar background (i.e, bulbasaur = grass = green)
 ---------------------------------------------------------
-
 auto populate a pokemon's moveset + stats with a basic number of moves (if simple)
 
+-> Moves numbered. Can pick 4 numbers (1,2,3,4) to populate moveset as a standard. 
 ---------------------------------------------------------
+random pokemon
+
+-> button next to option, random number generator with max being the last pokemon
+(use case, starting a game and picking who you play with)
+---------------------------------------------------------
+
 views folder (any file)
 
 <% if (user) {%>
 INFORMATION FROM PAGE
-<% } %> 
+<% }else {} %> 
 
 This code will hide enclosed information from people who aren't logged in.
 
