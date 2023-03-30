@@ -6,13 +6,19 @@ module.exports = {
     index,
     new: newTeam,
     create,
-    show
+    show,
+    delete: destroy
 }
 
 function index(req, res, next) {
     Team.find({'user': req.user._id})
+    .populate('pokemon')
     .then(function(teams){
         res.render('teams/index', {teams, title: 'All Teams'})
+    })
+    .catch(function(err){
+        console.log(err)
+        res.redirect('/')
     })
 
 
@@ -23,8 +29,7 @@ function newTeam(req, res, next){
 }
 
 function create(req, res, next){
-    console.log(req.user)
-    req.body.user = req.user._id
+        req.body.user = req.user._id
     Team.create(req.body)
     .then(function(newTeam){
         console.log(newTeam)
@@ -37,5 +42,28 @@ function create(req, res, next){
 }
 
 function show(req, res) {
-    res.render('teams/show', {title: 'User Teams'})
+    Team.findById(req.params.id)
+    .populate('pokemon')
+    .then(function(team){
+        res.render('teams/show', {team, title: 'User Teams'})
+
+    })
+    .catch(function(err){
+        console.log(err)
+        res.redirect('/teams')
+    })
 }
+
+function destroy(req, res){
+    Team.deleteOne(req.params.id)
+    .then(function(result){
+        console.log(result)
+        res.redirect('/teams')
+    })
+    .catch(function(err){
+        console.log(err)
+        res.redirect('teams')
+    })
+
+}
+

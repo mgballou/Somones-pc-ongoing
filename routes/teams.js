@@ -3,12 +3,17 @@ const router = express.Router();
 const teamsCtrl = require('../controllers/teams')
 
 
+
 router.get('/', teamsCtrl.index)
 
 router.get('/new', teamsCtrl.new)
 
-router.get('/show', teamsCtrl.show)
+router.get('/:id', teamsCtrl.show)
 
 router.post('/', teamsCtrl.create)
+
+router.delete('/:id', teamsCtrl.delete)
+
+router.put('/:id', teamsCtrl.update)
 
 module.exports = router
