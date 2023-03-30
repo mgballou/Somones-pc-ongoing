@@ -6,7 +6,8 @@ let endpoint
 
 module.exports = {
     create,
-    delete: removePokemon
+    delete: removePokemon,
+    update
 }
 
 function create(req, res) {
@@ -48,5 +49,29 @@ function removePokemon(req, res) {
     })
     .then(function(newTeam){
         res.redirect(`/teams/${newTeam._id}`)
+    })
+    .catch(function(err){
+        console.log(err)
+        res.redirect('/teams')
+    })
+}
+
+function update(req, res){
+    let referencedTeamId
+    Team.find({pokemon: foundPokemon})
+    .then(function(team){        
+        referencedTeamId = team._id
+    })
+    Pokemon.find(req.params.id)
+    .then(function(foundPokemon){
+        foundPokemon.nickname = req.body.nickname
+        return foundPokemon.save()
+    })
+        .then(function(){
+        res.redirect(`/teams/${referencedTeamId}`)
+    })
+    .catch(function(err){
+        console.log(err)
+        res.redirect(`/teams/${referencedTeamId}`)
     })
 }

@@ -66,3 +66,4 @@ function destroy(req, res){
     })
 
 }
+
