@@ -33,3 +33,63 @@ update - editing pokemon records (give pokemon a nickname value, and create the 
 Delete - delete team button on Show page, & remove/delete buttons on individual pokemon (for now, remove from database)
              i ended up removing the pokemon from the team, and refactoring the pokemon model to better match the intended structure
 
+
+
+
+nav.ejs - conditional for user logged in, conditionals for different pages
+what buttons do we want to show on each page?
+
+index (/teams)
+
+show (/teams/:id)
+
+new (/teams/new)
+
+edit - team #### (/teams/:id/edit)
+
+delete - teams (/teams/:id)
+
+
+
+update nav bar - Log In/ User, Box, View Teams
+
+
+create a /pokemon view (index of all pokemon)
+    on this page there will be a button to create new pokemon
+    clicking on a pokemon in your box opens that pokemons sh
+
+
+create a /pokemon/new view (create page)
+    text box for inputing the name or number of a pokemon you want to create
+    direct you to that pokemon's show/edit page
+    /pokemon/:id
+
+ /pokemon/edit   
+
+
+
+update /teams/show (/teams/:id) page - use one half of the screen for current pokemon / empty styled divs for those pokemon 
+    other half of the page steal the box from mongoose movies performers
+    front end JS file for event listeners on each pokemon sprite inside of that box
+
+
+
+
+
+
+
+
+
+
+we create a Box
+
+/pokemon (index view for all user's created pokemon)
+/pokemon/new (create view for pokemon model) create individual pokemon can nickname them)
+
+/teams/show - displays the name of the team and the current members
+big box of pokemon on the show page select additional team members
+
+adds that pokemon to the team
+once you have six pokemon in your team, the box view closes, or grays out, something 
+
+/pokemon/:id/edit - can edit details about one specific pokemon 
