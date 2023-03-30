@@ -6,7 +6,7 @@ let endpoint
 
 module.exports = {
     create,
-    delete: removePokemon,
+    delete: destroy,
     update,
     index,
     new: newPokemon,
@@ -70,7 +70,7 @@ function removePokemon(req, res) {
 
 function update(req, res) {
     
-    Pokemon.find(req.params.id)
+    Pokemon.findById(req.params.id)
         .then(function (foundPokemon) {
             foundPokemon.nickname = req.body.nickname
             return foundPokemon.save()
@@ -99,13 +99,21 @@ function newPokemon(req, res){
 }
 
 function edit(req, res){
-    Pokemon.find({_id: req.params.id})
+    Pokemon.findById({_id: req.params.id})
     .then(function(pokemon){
         // console.log(pokemon)
         res.render('pokemon/edit', {pokemon, title: "Edit Pokemon Details"})
     })
     .catch(function(err){
         console.log(err)
+        res.redirect('/pokemon')
+    })
+}
+
+function destroy(req, res){
+    Pokemon.deleteOne(req.body.id)
+    .then(function(results){
+        console.log(results)
         res.redirect('/pokemon')
     })
 }

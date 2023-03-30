@@ -8,10 +8,14 @@
         <div class="">
             <form class="" action="/pokemon/<%=pokemon._id%>?_method=PUT" method="POST">
                 <p>
-                    <%=pokemon.name%>
+                    <%if (pokemon.nickname !== ''){ %>
+                    "<%=pokemon.nickname%>" the <%=pokemon.name%>
+                    <%} else {%>
+                        <%=pokemon.name%>
+                        <%}%>
                 </p>
                 <label id="">Enter/Change Nickname:
-                    <input type="text" name="nickname" class=""><%=pokemon.nickname%></input>
+                    <input type="text" name="nickname" class="" value="<%=pokemon.nickname%>"></input>
                 </label><br>
                 <button type="submit" class="new-button">Save</button>
             </form>

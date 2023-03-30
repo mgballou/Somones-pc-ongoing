@@ -4,8 +4,14 @@
 
 
 <% pokemon.forEach(p => { %>
-    <p> <%=p.name%></p>
+    <p> <%if (p.nickname !== ''){ %>
+        "<%=p.nickname%>" the <%=p.name%>
+        <%} else {%>
+            <%=p.name%>
+            <%}%></p>
     <a href="/pokemon/<%=p._id%>">Pokemon Details</a>
+    <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
+    <button type="submit">Release Pokemon</button></form>
 <% }) %>
 
 
