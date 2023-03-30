@@ -1,5 +1,5 @@
 *{
-  border: solid red 1px;
+  /* border: solid red 1px; */
 }
 
 
@@ -152,9 +152,12 @@ a {
 }
 
 .pokeTeam {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-between;
+  display: grid;
+  grid-template-columns: [first] 30% [line2] 10% [line3] auto;
+  column-gap: 10px;
   font-family: 'Press Start 2P', cursive;
   font-size: 10px;
   padding: 5px;
@@ -167,6 +170,7 @@ a {
 
 .show-form {
   width: auto;
+  height: auto;
   margin: 10px 10px;
 }
 
@@ -175,6 +179,7 @@ a {
   background-color: red;
   color: white;
   border-radius: 15px;
+  
 }
 
 .edit-img {
@@ -213,6 +218,7 @@ a {
 #devs {
   display: flex;
   justify-content: space-around;
+  margin: 0;
 }
 
 #input {
