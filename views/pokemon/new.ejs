@@ -1,0 +1,48 @@
+<%- include("../partials/header")%>
+
+<!-- NAV BAR -->
+    <nav class="nav-global">
+
+        <div class="new-nav-bar">
+            <div id="nav">
+                <img class="user-sprite"><a href="https://pokemondb.net/pokedex/bulbasaur"><img
+                        src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif"
+                        alt="Bulbasaur"></a>[LOGGED IN USER]</img>
+            </div>
+            
+            <div id="nav">
+                <a href="/pokemon" class="box">BOX</a>            
+            </div>
+
+            <!-- <div id="nav">
+                <a href="/teams" class="fake-login">FAKE LOG IN</a>
+            </div> -->
+
+            <!-- <div id="nav">
+            <a href="/">HOME</a>                
+            </div> -->
+
+            <div id="nav">
+                <a href="/teams/index">VIEW TEAM</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- FORM -->
+    <div class="poke-new-form">
+        <img class="img-home"
+            src="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
+
+            <div class="">
+                <form class="" action="/pokemon" method="POST">
+                    <label id="">Enter poke' Name/ Dex Number:
+                    <input type="text" name="name" class=""></input>
+                    </label><br>
+                    <button type="submit" class="new-button">Next</button>
+                </form>
+            </div>
+    </div>
+
+    <%- include("../partials/footer")%>
