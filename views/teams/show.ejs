@@ -2,12 +2,17 @@
 
     <div class="show-img-form">
 
-        <div class="img">
-            <img class="img-home"
-                src="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
+        <div class="pokeTeamName"><%=team.name%></div>
+       <% team.pokemon.forEach(p => {%>
+
+        <div class="pokeTeam"><%=p.name%>
+            <a href="/pokemon/<%=p._id%>"><img
+                    src="<%=p.sprite%>" alt="<%=p.name%>"></a>
+            
         </div>
 
-        <div class="show-form">
+        <% }) %>
+        <!-- <div class="show-form">
 
             <form action="/teams/<%=team._id%>/pokemon" method="POST">
 
@@ -53,8 +58,17 @@
                 </div>
 
             </form>
-        </div>
-    </div>
+        </div> -->
+    </div> 
+
+    <div class="list-wrapper">
+        <% allPokemon.forEach(p => { %>
+            <form action="/teams/<%=team._id%>?_method=PUT" method="POST">
+                <input class="invisible-input" name="addPokemon" type="text" value="<%=p._id%>">
+                <button type="submit"><img class="" src="<%= p.sprite %>"></button>
+            </form>
+        <% }) %>
+       </div>
 
     <button>Add Pokemon</button>
 

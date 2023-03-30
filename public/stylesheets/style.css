@@ -200,6 +200,24 @@ a {
   display: flex;
 }
 
+.list-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  width: 100%;
+  padding: 0px .5em;
+
+  border: 2px solid #B8C0C2;
+  border-radius: 8px;
+}
+
+.invisible-input {
+  visibility: hidden;
+  width: 0px;
+}
+
 #nav {
   display: flex;
   height: auto;
