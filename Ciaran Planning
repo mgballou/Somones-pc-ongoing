@@ -65,7 +65,7 @@ views folder (any file)
 
 <% if (user) {%>
 INFORMATION FROM PAGE
-<% } %> 
+<% }else {} %> 
 
 This code will hide enclosed information from people who aren't logged in.
 

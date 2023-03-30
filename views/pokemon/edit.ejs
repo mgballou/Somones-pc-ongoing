@@ -1,0 +1,25 @@
+<%- include("../partials/header")%>
+
+    <!-- FORM -->
+    <div class="poke-edit-form">
+        <img class="img-home"
+            src="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
+
+        <div class="">
+            <form class="" action="/pokemon/<%=pokemon._id%>?_method=PUT" method="POST">
+                <p>
+                    <%if (pokemon.nickname !== ''){ %>
+                    "<%=pokemon.nickname%>" the <%=pokemon.name%>
+                    <%} else {%>
+                        <%=pokemon.name%>
+                        <%}%>
+                </p>
+                <label id="">Enter/Change Nickname:
+                    <input type="text" name="nickname" class="" value="<%=pokemon.nickname%>"></input>
+                </label><br>
+                <button type="submit" class="new-button">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include("../partials/footer")%>
