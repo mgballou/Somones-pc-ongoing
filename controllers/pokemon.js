@@ -7,7 +7,9 @@ let endpoint
 module.exports = {
     create,
     delete: removePokemon,
-    update
+    update,
+    index,
+    new: newPokemon
 }
 
 function create(req, res) {
@@ -28,11 +30,11 @@ function create(req, res) {
                 }
                 Pokemon.create(foundPokemon)
             })
-            .then(function(newPokemon){
+            .then(function (newPokemon) {
                 Team.find(req.params.id)
-                .then(function(foundTeam){
-                    foundTeam.pokemon.push(newPokemon._id)
-                })
+                    .then(function (foundTeam) {
+                        foundTeam.pokemon.push(newPokemon._id)
+                    })
             })
     })
     res.redirect(`/teams/${req.params.id}`)
@@ -40,38 +42,53 @@ function create(req, res) {
 }
 
 
+
 function removePokemon(req, res) {
     let pokeId = req.params.id
-    Team.find({pokemon: pokeId})
-    .then(function(team){
-        team.pokemon.pull(pokeId)
-        return team.save()
-    })
-    .then(function(newTeam){
-        res.redirect(`/teams/${newTeam._id}`)
-    })
-    .catch(function(err){
-        console.log(err)
-        res.redirect('/teams')
-    })
+    Team.find({ pokemon: pokeId })
+        .then(function (team) {
+            team.pokemon.pull(pokeId)
+            return team.save()
+        })
+        .then(function (newTeam) {
+            res.redirect(`/teams/${newTeam._id}`)
+        })
+        .catch(function (err) {
+            console.log(err)
+            res.redirect('/teams')
+        })
 }
 
-function update(req, res){
+function update(req, res) {
     let referencedTeamId
-    Team.find({pokemon: foundPokemon})
-    .then(function(team){        
-        referencedTeamId = team._id
-    })
+    Team.find({ pokemon: foundPokemon })
+        .then(function (team) {
+            referencedTeamId = team._id
+        })
     Pokemon.find(req.params.id)
-    .then(function(foundPokemon){
-        foundPokemon.nickname = req.body.nickname
-        return foundPokemon.save()
-    })
-        .then(function(){
-        res.redirect(`/teams/${referencedTeamId}`)
-    })
-    .catch(function(err){
-        console.log(err)
-        res.redirect(`/teams/${referencedTeamId}`)
-    })
+        .then(function (foundPokemon) {
+            foundPokemon.nickname = req.body.nickname
+            return foundPokemon.save()
+        })
+        .then(function () {
+            res.redirect(`/teams/${referencedTeamId}`)
+        })
+        .catch(function (err) {
+            console.log(err)
+            res.redirect(`/teams/${referencedTeamId}`)
+        })
+}
+
+
+
+function index(req, res) {
+    Pokemon.find({ 'user': req.user._id })
+        .then(function (pokemon) {
+            res.render('pokemon/index', { pokemon, title: 'All Your Pokemon' })
+        })
+}
+
+
+function newPokemon(req, res){
+    res.render('pokemon/new', {title: 'Create a new pokemon'})
 }

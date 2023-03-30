@@ -1,0 +1,14 @@
+<%- include("../partials/header")%>
+
+<!-- <h1>Welcome to {USERNAME}'s PC.</h1> -->
+
+
+<% pokemon.forEach(p => { %>
+    <p> <%=p.name%></p>
+    <a href="/pokemon/<%=p._id%>">Pokemon Details</a>
+<% }) %>
+
+
+<button><a href="/pokemon/new">Create New Pokemon</a></button>
+
+<%- include("../partials/footer")%>

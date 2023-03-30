@@ -1,48 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
 
     <div class="welcome">
 
         <h1>Welcome to <span id="someone">Someone's PC.</span></h1>
-        
+
     </div>
 
-    <!-- <nav class="nav-global">
-
+    <nav class="nav-global">
         <div class="nav-bar">
+            <% if (user) { %>
             <div id="nav">
-                <img class = "user-sprite"><a href="https://pokemondb.net/pokedex/bulbasaur"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" alt="Bulbasaur"></a>[LOGGED IN USER]</img>              
+                <img class="user-sprite"><a href="https://pokemondb.net/pokedex/bulbasaur"><img
+                        src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif"
+                        alt="Bulbasaur"></a><%=user.name%></img>
             </div>
             <div id="nav">
-                <a href="/logout">LOG OUT</a>
+                <a href="/pokemon">BOX</a>
             </div>
             <div id="nav">
-                <a href="/auth/google" class="login">LOG IN</a>            
+                <a href="/teams">VIEW TEAMS</a>
             </div>
+            <% } else {%>
             <div id="nav">
-                <a href="/teams" class ="fake-login">FAKE LOG IN</a>
+                <a href="/auth/google" class="login">LOG IN</a>
             </div>
-            <div id="nav">
-                <a href="/">HOME</a>                
-            </div>
-            <div id="nav">
-                <a href="/teams/new">NEW TEAM</a>
-            </div>
-
+            <% } %>
         </div>
-            
-    </nav> -->
 
-      
-
+    </nav>

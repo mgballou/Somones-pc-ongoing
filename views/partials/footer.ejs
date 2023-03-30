@@ -1,10 +1,11 @@
 <div>
 
     <h6 id="devs">Created by Matthew, Anthony and Ciaran</h6>
-
-    <a href="/logout">LOG OUT</a>
+    <% if (user) { %>
+        <a href="/logout">LOG OUT</a>
+        <% }%>
 
 </div>
-    </body>
+</body>
 
-    </html>
+</html>
