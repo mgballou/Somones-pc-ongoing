@@ -34,6 +34,7 @@ a {
   
 }
 
+/* NAV BAR */
 .nav-global {
   display: flex;
   padding: 0;
@@ -45,7 +46,6 @@ a {
   background-color: #63e668;
   color: #000000;
 }
-
 .nav-bar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -55,24 +55,67 @@ a {
   
 }
 
-.img-h2 {
+.show-nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 0 5px;
+  justify-content: center;
+  margin: 0;
+}
+
+.new-nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0 5px;
+  justify-content: center;
+  margin: 0;
+}
+
+/* GRID DISPLAY FOR IMAGE AND H2 ELEMENT INDEX VIEW */
+.index-img-h2 {
   display: grid;
   max-height: 80vh;
   grid-template-columns: 1fr 1fr;
 }
 
+/* IMAGE */
 .img-home {
   display: flex;
   height: 60vh;
   
 }
 
-.img {
+/* GRID DISPLAY FOR IMAGE AND H2 ELEMENT INDEX VIEW */
+.img, .new {
   display: flex;
   height: auto;
   width: auto;
 
 
+}
+
+/* DISPLAY FOR IMAGE AND H2 ELEMENT teams/new VIEW */
+.new {
+  justify-content: space-between;
+}
+
+/* teams/new FORM CLASS */
+.new-form {
+  margin: 75px 100px 0 75px;
+}
+
+.new-button {
+  margin: 10px 0 0 75px;
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+}
+
+/* INPUT FIELD ON teams/new */
+.new-input {
+  margin: 10px 0 0 0;
+  padding: 10px;
+  font-size: 16px;
 }
 
 .log-in {
@@ -90,6 +133,7 @@ a {
 
 }
 
+/* LOGIN BUTTON IN INDEX VIEW */
 .login {
   background-color: red;
   border-radius: 30px;
@@ -107,6 +151,17 @@ a {
   justify-content: center;
   padding: 3px;
   border: solid black 2px;
+}
+
+#team-name {
+  font-family: 'Press Start 2P', cursive;;
+  font-size: 20px;
+  justify-content: center;
+}
+
+#devs {
+  display: flex;
+  justify-content: space-around;
 }
 
 
