@@ -1,0 +1,35 @@
+Conditonal display for logged in/not logged in
+
+redirect after adding pokemon- done
+
+on the teams index - each team is held in a div with the images of the pokemon 
+team show page
+
+teams controller needs to populate it's pokemon before passing the context - done
+the sprites will be availble to inject in templates with teams.pokemon[i].sprite
+
+(on a show page team.pokemon[i].sprite)
+
+96x96 pixels by default for sprites
+
+
+conditional logic on the show page - show the 6 pokemon
+if there are not six pokemon
+show (6-current number of pokemon) boxes
+
+
+pokemon edit page
+update the model to have something to edit - done with nickname
+pull in the current information for the pokemon selected
+display it in an empty form
+submit button will send a PUT request to /???
+
+
+
+
+create - teams, pokemon
+read - teams, pokemon(box - pokemon index)
+update - editing pokemon records (give pokemon a nickname value, and create the edit page)
+Delete - delete team button on Show page, & remove/delete buttons on individual pokemon (for now, remove from database)
+             i ended up removing the pokemon from the team, and refactoring the pokemon model to better match the intended structure
+

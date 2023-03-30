@@ -5,7 +5,8 @@ const axios = require('axios')
 let endpoint
 
 module.exports = {
-    create
+    create,
+    delete: removePokemon
 }
 
 function create(req, res) {
@@ -14,32 +15,38 @@ function create(req, res) {
     let pokeArray = Object.values(req.body)
     let foundPokemon
     console.log(pokeArray)
-    pokeArray.forEach(pokemon =>{
+    pokeArray.forEach(pokemon => {
         endpoint = pokemon.toLowerCase()
         axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
-        .then(function (response) {
-           
-            foundPokemon = {
-                name: response.data.name,
-                dexNumber: response.data.id,
-                sprite: response.data.sprites.front_default,
-                user: req.user._id,
-                team: req.params.id
-            }
-            
-            Pokemon.create(foundPokemon)
-        })
-        // .then(function (foundPokemon) {
-        //     Team.findById(req.params.id)
-        //         .then(function (foundTeam) {
-        //             // console.log("count: ", counter, foundTeam)
-        //             foundTeam.pokemon.push(foundPokemon)
-        //             return foundTeam.save()
-        //         })
-        // })
+            .then(function (response) {
+                foundPokemon = {
+                    name: response.data.name,
+                    dexNumber: response.data.id,
+                    sprite: response.data.sprites.front_default,
+                    user: req.user._id,
+                }
+                Pokemon.create(foundPokemon)
+            })
+            .then(function(newPokemon){
+                Team.find(req.params.id)
+                .then(function(foundTeam){
+                    foundTeam.pokemon.push(newPokemon._id)
+                })
+            })
     })
+    res.redirect(`/teams/${req.params.id}`)
 
-    // not functional until endpoint is defined based on what is received from the user
 }
 
 
+function removePokemon(req, res) {
+    let pokeId = req.params.id
+    Team.find({pokemon: pokeId})
+    .then(function(team){
+        team.pokemon.pull(pokeId)
+        return team.save()
+    })
+    .then(function(newTeam){
+        res.redirect(`/teams/${newTeam._id}`)
+    })
+}

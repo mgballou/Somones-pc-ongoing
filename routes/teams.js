@@ -12,6 +12,8 @@ router.get('/:id', teamsCtrl.show)
 
 router.post('/', teamsCtrl.create)
 
-router.post('/:id', )
+router.delete('/:id', teamsCtrl.delete)
+
+// router.post('/:id', )
 
 module.exports = router

@@ -4,5 +4,6 @@ const pokemonCtrl = require('../controllers/pokemon')
 
 router.post('/teams/:id/pokemon', pokemonCtrl.create)
 
+router.delete('/pokemon/:id', pokemonCtrl.delete)
 
 module.exports = router
