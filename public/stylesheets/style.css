@@ -71,8 +71,15 @@ a {
   margin: 0;
 }
 
-/* GRID DISPLAY FOR IMAGE AND H2 ELEMENT INDEX VIEW */
+/* IMAGE AND H2 ELEMENT INDEX VIEW CONTAINER*/
 .index-img-h2 {
+  display: grid;
+  max-height: 80vh;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* DIV CONTAINER FOR IMG AND FORM teams/new */
+.show-img-form {
   display: grid;
   max-height: 80vh;
   grid-template-columns: 1fr 1fr;
@@ -85,17 +92,11 @@ a {
   
 }
 
-/* GRID DISPLAY FOR IMAGE AND H2 ELEMENT INDEX VIEW */
-.img, .new {
+/* IMAGE AND FORM teams/new VIEW */
+.img, .new-img-form {
   display: flex;
   height: auto;
   width: auto;
-
-
-}
-
-/* DISPLAY FOR IMAGE AND H2 ELEMENT teams/new VIEW */
-.new {
   justify-content: space-between;
 }
 
@@ -111,6 +112,13 @@ a {
   border-radius: 15px;
 }
 
+.show-button {
+  margin: 10px 0 0 150px;
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+}
+
 /* INPUT FIELD ON teams/new */
 .new-input {
   margin: 10px 0 0 0;
@@ -120,9 +128,8 @@ a {
 
 .log-in {
   display: grid;
-  /* flex-direction: wrap; */
   align-items: center;
-  /* justify-content: space-around; */
+  
 }
 
 .log-in>h2 {
@@ -144,6 +151,24 @@ a {
   color: white;
 }
 
+.pokeTeamName {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+  font-size: 25px;
+  border: black solid 2px;
+}
+
+.pokeTeam {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  padding: 5px;
+}
+
+.show-form {
+  margin: 10px 10px;
+}
+
+
 #nav {
   display: flex;
   height: auto;
@@ -154,7 +179,7 @@ a {
 }
 
 #team-name {
-  font-family: 'Press Start 2P', cursive;;
+  font-family: 'Press Start 2P', cursive;
   font-size: 20px;
   justify-content: center;
 }
@@ -163,6 +188,7 @@ a {
   display: flex;
   justify-content: space-around;
 }
+
 
 
 
