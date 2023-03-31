@@ -6,10 +6,13 @@ const logger = require('morgan');
 const session = require('express-session')
 const passport = require('passport')
 const methodOverride = require('method-override')
+const mongoURI = process.env.DATABASE_URL
 
 require('dotenv').config()
 require('./config/database')
 require('./config/passport')
+PORT = 3000
+
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -21,6 +24,7 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('port', process.env.PORT || 3000)
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -38,8 +42,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(function(req, res, next){
-  console.log(req.user)
-  res.locals.user = req.user
+    res.locals.user = req.user
   next()
 })
 
@@ -47,6 +50,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/teams', teamsRouter)
 app.use('/', pokemonRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

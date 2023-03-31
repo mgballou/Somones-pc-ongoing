@@ -66,7 +66,7 @@ function show(req, res) {
 }
 
 function destroy(req, res) {
-    Team.deleteOne(req.params.id)
+    Team.deleteOne({_id: req.params.id})
         .then(function (result) {
             console.log(result)
             res.redirect('/teams')
@@ -81,6 +81,9 @@ function destroy(req, res) {
 function update(req, res) {
     Team.findById(req.params.id)
         .then(function (foundTeam) {
+            if (foundTeam.pokemon.length > 5) {
+                return
+            }
             foundTeam.pokemon.push(req.body.addPokemon)
             return foundTeam.save()
         })

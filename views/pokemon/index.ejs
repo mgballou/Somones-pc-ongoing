@@ -1,21 +1,25 @@
 <%- include("../partials/header")%>
 
-<!-- <h1>Welcome to {USERNAME}'s PC.</h1> -->
-
-
+<fieldset class="fence">
+<fieldset class="daycare">
 <% pokemon.forEach(p => { %>
-    <p> <%if (p.nickname !== ''){ %>
-        "<%=p.nickname%>" the <%=p.name%>
-        <%} else {%>
-            <%=p.name%>
-            <%}%></p>
-     <img src="<%=p.sprite%>">       
-    <a href="/pokemon/<%=p._id%>">Pokemon Details</a>
-    <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
+    <div>
+        <a href="/pokemon/<%=p._id%>"><img class="" src="<%= p.sprite %>"></a>
+        <p> <%if (p.nickname !== ''){ %>
+            "<%=p.nickname%>"
+            <%} else {%>
+                <%=p.name%>
+                <%}%></p>
+
+        <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
     <button type="submit">Release Pokemon</button></form>
+    </div>
+
 <% }) %>
+</fieldset>
 
 
-<button><a href="/pokemon/new">Create New Pokemon</a></button>
+</fieldset>
+<button class="daycareBtn"><a  href="/pokemon/new">Create New Pokemon</a></button>
 
 <%- include("../partials/footer")%>

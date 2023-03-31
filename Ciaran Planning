@@ -1,5 +1,83 @@
 Teamname == The Mac
 ---------------------------------------------------------
+DEBUG 
+
+- teams/view - "add pokemon" button no longer needed
+- /pokemon - spacing between pokemon
+- /pokemon - "release pokemon" not working
+
+
+---------------------------------------------------------
+
+Work for Friday -
+-> favourite pokemon|| General page set up. 
+Holding image of "who's that pokemon" when favourite pokemon = null (code for that needs to be written). 
+input field for favourite pokemon set up, however does nothing. 
+must add to schema for an "avatar" and generate image on banner + user page.
+page itself not linked
+
+-> shiny sprites.on the code that generates image. 
+random num generator between 1-10 (can be anything but smaller number so it actually triggers).
+
+controllers/pokemon.js
+
+let randomInt = Math.floor(Math.random() * 10)
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+getRandomInt(10)
+
+if (getRandomInt === 1) {
+    foundPokemon.sprite = response.data.sprites.front_shiny
+} else {
+    foundPokemon.sprite = response.data.sprites.front_default
+}
+
+-> banner filter.
+
+if (user.favourite.type === "normal"){
+
+}else if (user.favourite.type === "fire"){
+<div class = "fire">
+}else if (user.favourite.type === "water"){
+<div class = "water">
+}else if(user.favourite.type === "electric"
+<div class = "electric">
+}else if(user.favourite.type === "rock"
+<div class = "rock">
+}else if(user.favourite.type === "dark"
+<div class = "dark">
+}else if(user.favourite.type === "grass"
+<div class = "grass">
+}else if(user.favourite.type === "ice"
+<div class = "ice">
+}else if(user.favourite.type === "fighting"
+<div class = "fighting">
+}else if(user.favourite.type === "poison"
+<div class = "poison">
+}else if(user.favourite.type === "ghost"
+<div class = "ghost">
+}else if(user.favourite.type === "steele"
+<div class = "steele">
+}else if(user.favourite.type === "ground"
+<div class = "ground">
+}else if(user.favourite.type === "flying"
+<div class = "flying">
+}else if(user.favourite.type === "psychic"
+<div class = "psychic">
+}else if(user.favourite.type === "bug"
+<div class = "bug">
+}else if(user.favourite.type === "dragon"
+<div class = "dragon">
+}else if(user.favourite.type === "fairy"
+<div class = "fairy">
+
+switch/case 
+
+<%=user.favorite.type%>
+
+---------------------------------------------------------
 color codes for banner;
 
 Normal: AAAA99      Grass: 77CC55       Ground: DDBB55
@@ -8,7 +86,7 @@ Water: 3399FF       Fighting: BB5544    Psychic: FF5599
 Electric: FFCC33    Poison: 995599      Bug: AABB22
 Rock: BBAA66        Ghost: 6666BB       Dragon: 7766EE
 Dark: 775544        Steel: AAAABB       Fairy: EEAAEE
-
+---------------------------------------------------------
 
 Fix header
 view pokemon 

@@ -14,43 +14,44 @@ module.exports = {
 }
 
 function create(req, res) {
-    // req.body.user = req.user._id
-    // console.log(req.body)
-    // let pokeArray = Object.values(req.body)
-    let foundPokemon
-    // console.log(pokeArray)
+    if (req.body.name > 1008) {
+        res.redirect('/pokemon/new')
+    }
 
-    if (typeof(req.body) !== Number){
+    let foundPokemon
+    let randomInt = Math.floor(Math.random() * 10)
+
+
+    if (typeof (req.body) !== Number) {
         endpoint = req.body.name.toLowerCase()
 
     } else {
         endpoint = req.body.name
     }
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
-            .then(function (response) {
-                foundPokemon = {
-                    name: response.data.name,
-                    dexNumber: response.data.id,
-                    sprite: response.data.sprites.front_default,
-                    user: req.user._id,
-                    types: response.data.types,
-                    learnset: response.data.moves,
-                    stats: response.data.stats
-                }
-                console.log(foundPokemon)
-                Pokemon.create(foundPokemon)
-            })
-            .then(function (newPokemon) {
-                console.log(newPokemon)
-                res.redirect('/pokemon')
-            })
-            .catch(function(err){
-                console.log(err)
-                res.redirect('/pokemon/new')
-            })
-                
-   
-   
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
+        .then(function (response) {
+            foundPokemon = {
+                name: response.data.name,
+                dexNumber: response.data.id,
+                user: req.user._id,
+                sprite: response.data.sprites.front_default
+            }
+            if (randomInt === 1 && foundPokemon.dexNumber <= 905) {
+                foundPokemon.sprite = response.data.sprites.front_shiny
+            }
+            Pokemon.create(foundPokemon)
+        })
+        .then(function (newPokemon) {
+            console.log(newPokemon)
+            res.redirect('/pokemon')
+        })
+        .catch(function (err) {
+            console.log(err)
+            res.redirect('/pokemon/new')
+        })
+
+
+
 
 }
 
@@ -73,7 +74,7 @@ function removePokemon(req, res) {
 }
 
 function update(req, res) {
-    
+
     Pokemon.findById(req.params.id)
         .then(function (foundPokemon) {
             foundPokemon.nickname = req.body.nickname
@@ -98,26 +99,37 @@ function index(req, res) {
 }
 
 
-function newPokemon(req, res){
-    res.render('pokemon/new', {title: 'Create a new pokemon'})
+function newPokemon(req, res) {
+    res.render('pokemon/new', { title: 'Create a new pokemon' })
 }
 
-function edit(req, res){
-    Pokemon.findById({_id: req.params.id})
-    .then(function(pokemon){
-        // console.log(pokemon)
-        res.render('pokemon/edit', {pokemon, title: "Edit Pokemon Details"})
-    })
-    .catch(function(err){
-        console.log(err)
-        res.redirect('/pokemon')
-    })
+function edit(req, res) {
+    Pokemon.findById({ _id: req.params.id })
+        .then(function (pokemon) {
+            // console.log(pokemon)
+            res.render('pokemon/edit', { pokemon, title: "Edit Pokemon Details" })
+        })
+        .catch(function (err) {
+            console.log(err)
+            res.redirect('/pokemon')
+        })
 }
 
-function destroy(req, res){
-    Pokemon.deleteOne(req.body.id)
-    .then(function(results){
-        console.log(results)
-        res.redirect('/pokemon')
-    })
+function destroy(req, res) {
+    Team.find({ 'pokemon': req.params.id })
+        .then(function (foundTeams) {
+            console.log(foundTeams)
+            foundTeams.forEach(team => {
+                team.pokemon.pull(req.params.id)
+                team.save()
+            })
+            return 
+
+        })
+
+    Pokemon.deleteOne({ _id: req.params.id })
+        .then(function (results) {
+            console.log(results)
+            res.redirect('/pokemon')
+        })
 }

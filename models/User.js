@@ -5,7 +5,12 @@ const userSchema = new mongoose.Schema({
     googleId: {type: String,
     require: true},
     email: String,
-    avatar: String
+    avatar: String,
+    favorite: {
+        name: String,
+        types: {},
+        sprite: String,
+    }
 }, {
     timestamps: true
 
