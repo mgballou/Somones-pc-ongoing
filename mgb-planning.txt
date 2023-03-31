@@ -95,3 +95,7 @@ once you have six pokemon in your team, the box view closes, or grays out, somet
 /pokemon/:id/edit - can edit details about one specific pokemon 
 
 !
+
+
+
+

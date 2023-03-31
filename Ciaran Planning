@@ -15,17 +15,62 @@ random num generator between 1-1000.
 
 controllers/pokemon.js
 
+let randomInt = Math.floor(Math.random() * 10)
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 getRandomInt(10)
 
-if getRandomInt === 1 {
-    sprite: response.data.sprites.front_shiny
-} else response.data.sprites.front_default
-
+if (getRandomInt === 1) {
+    foundPokemon.sprite = response.data.sprites.front_shiny
+} else {
+    foundPokemon.sprite = response.data.sprites.front_default
+}
 
 -> banner filter.
+
+if (user.favourite.type === "normal"){
+
+}else if (user.favourite.type === "fire"){
+<div class = "fire">
+}else if (user.favourite.type === "water"){
+<div class = "water">
+}else if(user.favourite.type === "electric"
+<div class = "electric">
+}else if(user.favourite.type === "rock"
+<div class = "rock">
+}else if(user.favourite.type === "dark"
+<div class = "dark">
+}else if(user.favourite.type === "grass"
+<div class = "grass">
+}else if(user.favourite.type === "ice"
+<div class = "ice">
+}else if(user.favourite.type === "fighting"
+<div class = "fighting">
+}else if(user.favourite.type === "poison"
+<div class = "poison">
+}else if(user.favourite.type === "ghost"
+<div class = "ghost">
+}else if(user.favourite.type === "steele"
+<div class = "steele">
+}else if(user.favourite.type === "ground"
+<div class = "ground">
+}else if(user.favourite.type === "flying"
+<div class = "flying">
+}else if(user.favourite.type === "psychic"
+<div class = "psychic">
+}else if(user.favourite.type === "bug"
+<div class = "bug">
+}else if(user.favourite.type === "dragon"
+<div class = "dragon">
+}else if(user.favourite.type === "fairy"
+<div class = "fairy">
+
+switch/case 
+
+<%=user.favorite.type%>
+
 ---------------------------------------------------------
 color codes for banner;
 
