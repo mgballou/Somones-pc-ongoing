@@ -14,14 +14,14 @@ module.exports = {
 }
 
 function create(req, res) {
-    if (req.body.name > 1008){
+    if (req.body.name > 1008) {
         res.redirect('/pokemon/new')
     }
-    
+
     let foundPokemon
     let randomInt = Math.floor(Math.random() * 10)
-    
-    
+
+
     if (typeof (req.body) !== Number) {
         endpoint = req.body.name.toLowerCase()
 
@@ -116,7 +116,18 @@ function edit(req, res) {
 }
 
 function destroy(req, res) {
-    Pokemon.deleteOne({_id: req.params.id})
+    Team.find({ 'pokemon': req.params.id })
+        .then(function (foundTeams) {
+            console.log(foundTeams)
+            foundTeams.forEach(team => {
+                team.pokemon.pull(req.params.id)
+                team.save()
+            })
+            return 
+
+        })
+
+    Pokemon.deleteOne({ _id: req.params.id })
         .then(function (results) {
             console.log(results)
             res.redirect('/pokemon')

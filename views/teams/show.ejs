@@ -2,17 +2,24 @@
 
     <div class="show-img-form">
 
-        <div class="pokeTeamName"><%=team.name%></div>
-       <% team.pokemon.forEach(p => {%>
-
-        <div class="pokeTeam"><%=p.name%>
-            <a href="/pokemon/<%=p._id%>"><img
-                    src="<%=p.sprite%>" alt="<%=p.name%>"></a>
-            
+        <div class="pokeTeamName">
+            <%=team.name%>
         </div>
+        <% team.pokemon.forEach(p=> {%>
 
-        <% }) %>
-        <!-- <div class="show-form">
+            <div class="pokeTeam">
+                <%if (pokemon.nickname !=='' ){ %>
+                    "<%=pokemon.nickname%>"
+                        <%} else {%>
+                            <%=pokemon.name%>
+                                <%}%>
+
+                                    <a href="/pokemon/<%=p._id%>"><img src="<%=p.sprite%>" alt="<%=p.name%>"></a>
+
+            </div>
+
+            <% }) %>
+                <!-- <div class="show-form">
 
             <form action="/teams/<%=team._id%>/pokemon" method="POST">
 
@@ -59,17 +66,23 @@
 
             </form>
         </div> -->
-    </div> 
+    </div>
 
-    <div class="list-wrapper">
-        <% allPokemon.forEach(p => { %>
-            <form action="/teams/<%=team._id%>?_method=PUT" method="POST">
-                <input class="invisible-input" name="addPokemon" type="text" value="<%=p._id%>">
-                <button type="submit"><img class="" src="<%= p.sprite %>"></button>
-            </form>
-        <% }) %>
-       </div>
+    <% if(team.pokemon.length> 5) { %>
 
-    </form>
+        <% } else { %>
+            <div class="list-wrapper">
+                <% allPokemon.forEach(p=> { %>
+                    <form action="/teams/<%=team._id%>?_method=PUT" method="POST">
+                        <input class="invisible-input" name="addPokemon" type="text" value="<%=p._id%>">
+                        <button type="submit"><img class="" src="<%= p.sprite %>"></button>
+                    </form>
+                    <% }) %>
+            </div>
+            <% } %>
 
-    <%- include('../partials/footer') %>
+
+
+
+
+                <%- include('../partials/footer') %>

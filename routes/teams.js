@@ -1,19 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const teamsCtrl = require('../controllers/teams')
+const ensureLoggedIn = require('../config/ensureLoggedIn')
 
 
 
-router.get('/', teamsCtrl.index)
+router.get('/', ensureLoggedIn, teamsCtrl.index)
 
-router.get('/new', teamsCtrl.new)
+router.get('/new', ensureLoggedIn, teamsCtrl.new)
 
-router.get('/:id', teamsCtrl.show)
+router.get('/:id', ensureLoggedIn, teamsCtrl.show)
 
-router.post('/', teamsCtrl.create)
+router.post('/', ensureLoggedIn, teamsCtrl.create)
 
-router.delete('/:id', teamsCtrl.delete)
+router.delete('/:id', ensureLoggedIn, teamsCtrl.delete)
 
-router.put('/:id', teamsCtrl.update)
+router.put('/:id', ensureLoggedIn, teamsCtrl.update)
 
 module.exports = router
