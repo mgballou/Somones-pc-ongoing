@@ -33,7 +33,11 @@ function create(req, res) {
                     dexNumber: response.data.id,
                     sprite: response.data.sprites.front_default,
                     user: req.user._id,
+                    types: response.data.types,
+                    learnset: response.data.moves,
+                    stats: response.data.stats
                 }
+                console.log(foundPokemon)
                 Pokemon.create(foundPokemon)
             })
             .then(function (newPokemon) {
