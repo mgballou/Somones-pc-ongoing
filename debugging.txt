@@ -13,3 +13,8 @@ user/id - who's that pokemon + favorite pokemon images not showing, no redirect 
 teams/id - showing name not nickname
 
 /pokemon - pokemon 1010 doesn't have a sprite, broke system. Might need to have a max (1008 last to have sprites), potential issue for shiny also? 905 last shiny vg
+
+[0-9]{1,3}[0-8]? - almost works, but matches 1998
+
+
+[1-1008]

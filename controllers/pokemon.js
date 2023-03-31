@@ -14,14 +14,14 @@ module.exports = {
 }
 
 function create(req, res) {
-    // req.body.user = req.user._id
-    // console.log(req.body)
-    // let pokeArray = Object.values(req.body)
+    if (req.body.name > 1008){
+        res.redirect('/pokemon/new')
+    }
+    
     let foundPokemon
     let randomInt = Math.floor(Math.random() * 10)
     
-    // console.log(pokeArray)
-
+    
     if (typeof (req.body) !== Number) {
         endpoint = req.body.name.toLowerCase()
 
