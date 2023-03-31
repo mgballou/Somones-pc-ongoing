@@ -1,20 +1,54 @@
 *{
   box-sizing: border-box;
-  border: solid red 1px;
+  /* border: solid red 1px; */
 }
 
 
 
-body, html {
-  height: 100%;
-  width: 100%;
-  border: solid black 2px;
+body {
+  max-height: 950px;
+  max-width: 100%;
+  border: solid black 4px;
   margin: 0;
-  padding: 0;
+  padding: 10px 2%;
+  background-color:rgb(124, 9, 9);
  } 
+
+ html {
+  display: flex;
+  justify-content: center;
+  border: solid black 5px;
+  padding: 10px;
+  background-color: rgb(157, 10, 10);
+ }
 
 a {
   color: hsl(0, 0%, 0%);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: [first] 10% [line2] auto[line3] 10% [end];
+  column-gap: 10px;
+  border: solid black 2px;
+  background-color: rgb(124, 9, 9);
+  /* box-shadow: 3px 3px; */
+}
+
+.left {
+  border: solid black 2px;
+  background-image: url(https://img.freepik.com/premium-photo/louver-window_5219-4859.jpg);
+  box-shadow: 3px 3px 5px;
+}
+
+.right {
+  border: solid black 2px;
+  background-image: url(https://img.freepik.com/premium-photo/louver-window_5219-4859.jpg);
+  box-shadow: 3px 3px 5px;
+}
+
+.view {
+  border: solid black 2px;
 }
 
 .daycare {
@@ -22,7 +56,7 @@ a {
   flex-flow: row wrap;
   border: solid black 3px;
   min-height: 100%;
-  miwidth: 100%;
+  min-width: 100%;
 
 }
 
@@ -42,32 +76,36 @@ a {
 .welcome {
   display: flex;
   font-family: 'Press Start 2P', cursive;
-  font-size: 13px;
-  justify-content: space-evenly;
+  font-size: 5px;
+  align-items: center;
   height: auto;
   width: auto;
-  margin: 0 0 0 1px;
-  padding: 1px;
+  margin: 0;
+  padding: 10px 0 0 40px;
+  border: black 6px;
+  border-style: double;
+  background-color: white;
   
 }
 
 /* NAV BAR */
 .nav-global {
-  display: flex;
-  padding: 0;
-  height: auto;
+  display: block;
+  padding: 3px;
+  height: 60%;
   width: auto;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  /* align-content: stretch;
+  align-items: center; */
   margin-top: 0;
-  background-color: #63e668;
+  background-color: white;
+  border: double black 6px;
   color: #000000;
 }
 .nav-bar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   margin: 0 5px;
-  justify-content: center;
+  align-content: stretch;
   margin: 0;
   
 }
@@ -102,12 +140,6 @@ a {
   grid-template-columns: [first] 40% [line2] 60%;
 }
 
-/* IMAGE */
-.img-home {
-  display: flex;
-  height: 60vh;
-  
-}
 
 /* IMAGE AND FORM teams/new VIEW */
 .img, .new-img-form {
@@ -136,15 +168,29 @@ a {
   font-size: 16px;
 }
 
+/* INDEX LOGIN VIEW RIGHT OF THE PICTURE */
 .log-in {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  border: black 6px;
+  border-style: double double none none;
+  background-color: white;
+}
+
+/* IMAGE */
+.img-home {
+  display: flex;
+  height: 60vh;
+  padding: 20px;
+  border: black 6px;
+  border-style: double none none double;
+  background-color: white;
   
 }
 
 .log-in>h2 {
   font-family: 'Press Start 2P', cursive;
-  /* margin: 0; */
   height: 25%;
   padding: 10px;
 
@@ -153,8 +199,13 @@ a {
 /* LOGIN BUTTON IN INDEX VIEW */
 .login {
   background-color: red;
-  border-radius: 30px;
-  margin: 0 auto;
+  border: solid black 1px;
+  border-radius: 10px;
+  height: 50px;
+  justify-content: center;
+  padding: 0 15px;
+  margin-top: -20px;
+  box-shadow: 3px 3px 4px;
 }
 
 .white {
@@ -235,9 +286,66 @@ a {
   width: 0px;
 }
 
+.footer {
+  display: flex;
+  height: 10vh;
+  align-items: flex-end;
+  padding: 0 0 0 5px;
+  border: black 6px;
+  border-style: none double double double;
+  background-color: white;
+
+}
+
+#welcome {
+  text-shadow: -1px 0 2px black, 0 1px 2px black, 1px 0 2px black, 0 -1px 2px black;
+  color: yellow;
+}
+
+#to {
+  text-shadow: -1px 0 2px black, 0 1px 2px black, 1px 0 2px black, 0 -1px 2px black;
+  color: blue;
+}
+
+#someone {
+  text-shadow: -1px 0 2px black, 0 1px 2px black, 1px 0 2px black, 0 -1px 2px black;
+  color: red;
+}
+
+#pc {
+  text-shadow: -1px 0 2px black, 0 1px 2px black, 1px 0 2px black, 0 -1px 2px black;
+  color: green;
+} 
+
+#Please {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#To {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 15px 0;
+}
+
+#Cont {
+  display: flex;
+  align-items: center;
+}
+
+#indexNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 0 0 0 40px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLmA4OhHKNT0y0mAmTYgNWp1OVI_m6__uFA&usqp=CAU);
+
+}
+
 #nav {
   display: flex;
-  height: auto;
+  height: 100%;
   width: auto;
   justify-content: center;
   padding: 3px;
@@ -250,15 +358,14 @@ a {
   justify-content: center;
 }
 
-#devs {
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-}
-
 #input {
   height: 40px;
 }
 
-
+#devs {
+  border: black 1px 1px;
+  border-style: inset;
+  padding: 2px;
+  
+}
 
