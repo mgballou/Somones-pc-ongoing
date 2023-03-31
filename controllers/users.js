@@ -30,9 +30,10 @@ function addFavoritePokemon(req, res){
             foundUser.favorite=foundPokemon
             return foundUser.save()
         })
-        res.redirect(`/users/${req.user._id}`)
+        res.redirect(`/pokemon`)
     }).catch(function (err){
         console.log(err)
+        res.redirect(`/pokemon`)
     })
 }
 

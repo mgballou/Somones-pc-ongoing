@@ -6,11 +6,11 @@
     <div>
         <a href="/pokemon/<%=p._id%>"><img class="" src="<%= p.sprite %>"></a>
         <p> <%if (p.nickname !== ''){ %>
-            "<%=p.nickname%>" the <%=p.name%>
+            "<%=p.nickname%>"
             <%} else {%>
                 <%=p.name%>
                 <%}%></p>
-                
+
         <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
     <button type="submit">Release Pokemon</button></form>
     </div>
