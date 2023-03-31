@@ -3,15 +3,17 @@
 <fieldset class="fence">
 <fieldset class="daycare">
 <% pokemon.forEach(p => { %>
-    <p> <%if (p.nickname !== ''){ %>
-        "<%=p.nickname%>" the <%=p.name%>
-        <%} else {%>
-            <%=p.name%>
-            <%}%></p>
-     <img src="<%=p.sprite%>">       
-    <a href="/pokemon/<%=p._id%>">Pokemon Details</a>
-    <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
+    <div>
+        <a href="/pokemon/<%=p._id%>"><img class="" src="<%= p.sprite %>"></a>
+        <p> <%if (p.nickname !== ''){ %>
+            "<%=p.nickname%>" the <%=p.name%>
+            <%} else {%>
+                <%=p.name%>
+                <%}%></p>
+        <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
     <button type="submit">Release Pokemon</button></form>
+    </div>
+
 <% }) %>
 
 
