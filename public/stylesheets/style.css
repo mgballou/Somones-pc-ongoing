@@ -313,6 +313,18 @@ a:link {
   border: black 6px;
   border-style: double;
   background-color: white;
+}
+
+.pokeNewImg {
+  min-height: 290px;
+  min-width: 490px;
+  background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--ULVfV0eF--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gdt6r96u6aotmhmindri.png);
+  background-size: 500px 350px;
+  box-shadow: 2px 2px 2px 2px black inset;
+
+}
+
+.pokeNew {
 
 }
 
