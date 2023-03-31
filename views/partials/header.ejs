@@ -25,35 +25,33 @@
 
     </div>
 
-    <nav class="nav-global">
+    <nav >
         <div class="nav-bar">
             <% if (user) { %>
                 
+                <div class="nav-global">
                     <a href="/users/<%=user._id%>">
                 <% if (user.favorite) {%>
                     <img class="user-sprite" src="<%=user.favorite.sprite%>"><%=user.name%>
                     <% }else {%> 
                         <img src="https://pokemondb.net/pokedex/bulbasaur" alt="bulbasaur"><%=user.name%>
                         <%} %>
-                      
-                      
-                        
-                </a>
-           
-           
-                <a href="/pokemon">BOX</a>
+                    </a>
+                
+                    <a href="/pokemon">BOX</a>
+
+                    <a href="/teams">VIEW TEAMS</a>
+                
+                
             
-            
-                <a href="/teams">VIEW TEAMS</a>
-            
-            </div>
+        </div>
             <% } else {%>
-                <div class="nav-bar" id="indexNav">
-                   <img width="45px" height="60px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" alt="Bulbasaur">
-                   <img width="45px" height="60px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif" alt="Charmander">
-                   <img width="45px" height="60px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif" alt="Squirtle">
-                   <img width="45px" height="60px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" alt="Pikachu">
-                   <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/lucario.gif" alt="Lucario">
+                <div id="indexNav">
+                   <img width="45px" height="50px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" alt="Bulbasaur">
+                   <img width="45px" height="50px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif" alt="Charmander">
+                   <img width="45px" height="50px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif" alt="Squirtle">
+                   <img width="45px" height="50px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" alt="Pikachu">
+                   <img height="50px" src="https://img.pokemondb.net/sprites/black-white/anim/normal/lucario.gif" alt="Lucario">
 
                 </div>
             <% } %>
