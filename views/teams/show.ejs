@@ -8,10 +8,10 @@
         <% team.pokemon.forEach(p=> {%>
 
             <div class="pokeTeam">
-                <%if (pokemon.nickname !=='' ){ %>
-                    "<%=pokemon.nickname%>"
+                <%if (p.nickname !=='' ){ %>
+                    "<%=p.nickname%>"
                         <%} else {%>
-                            <%=pokemon.name%>
+                            <%=p.name%>
                                 <%}%>
 
                                     <a href="/pokemon/<%=p._id%>"><img src="<%=p.sprite%>" alt="<%=p.name%>"></a>
