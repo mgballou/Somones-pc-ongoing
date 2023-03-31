@@ -1,0 +1,10 @@
+ensureloggedIn on multiple pages - redirect - Matthew 
+
+logic to limit a team to only 6 members - controller functions - Matthew 
+
+pokemon - release pokemon not working - Matthew
+
+spacing on pokemon box page
+
+
+
