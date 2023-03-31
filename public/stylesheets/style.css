@@ -325,7 +325,8 @@ a:link {
 }
 
 .pokeNew {
-
+  border: double ;
+  display: grid;
 }
 
 #logout>a{
