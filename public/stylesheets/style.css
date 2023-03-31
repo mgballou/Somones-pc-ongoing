@@ -364,7 +364,7 @@ a:link {
 
 #dexInput>input {
   border: solid black 2px;
-
+  text-align: center;
 }
 
 #logout>a{
