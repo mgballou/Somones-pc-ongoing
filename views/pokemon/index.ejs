@@ -8,6 +8,7 @@
         <%} else {%>
             <%=p.name%>
             <%}%></p>
+<<<<<<< HEAD
             <a href="/pokemon/<%=p._id%>">Pokemon Details</a>
             <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
             <button type="submit">Release Pokemon</button></form>
@@ -15,6 +16,13 @@
         </fieldset>
 
         
+=======
+     <img src="<%=p.sprite%>">       
+    <a href="/pokemon/<%=p._id%>">Pokemon Details</a>
+    <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
+    <button type="submit">Release Pokemon</button></form>
+<% }) %>
+>>>>>>> 1f24b7f99e739712d5e995b02a20535bbbee994c
 
 
 <button class="daycareBtn" ><a href="/pokemon/new"><img <a href="https://pokemondb.net/pokedex/moltres">Create New Pokemon</a></button>
