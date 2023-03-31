@@ -1,6 +1,12 @@
 Teamname == The Mac
 ---------------------------------------------------------
-DEBUG - enter team accepts null value
+DEBUG 
+
+- teams/view - "add pokemon" button no longer needed
+- /pokemon - spacing between pokemon
+- /pokemon - "release pokemon" not working
+
+
 ---------------------------------------------------------
 
 Work for Friday -
