@@ -1,25 +1,42 @@
 *{
-  /* border: solid red 1px; */
+  box-sizing: border-box;
+  border: solid red 1px;
 }
 
 
 
-
-html {
-  max-height: 545px;
-  max-width: 700px;
+body, html {
+  height: 100%;
+  width: 100%;
   border: solid black 2px;
-
-}
-
-body {
-  max-height: 525px;
-  max-width: 684px;
-  border: solid black 2px;
+  margin: 0;
+  padding: 0;
  } 
 
 a {
   color: hsl(0, 0%, 0%);
+}
+
+.daycare {
+  display: flex;
+  flex-flow: row wrap;
+  border: solid black 3px;
+  min-height: 100%;
+  miwidth: 100%;
+
+}
+
+.fence {
+  display: grid;
+  border: solid purple 2px;
+  height: 65%;
+}
+
+.daycareBtn {
+  display: flex;
+  padding: 10px;
+  background-size: 100%;
+  height: 10px;
 }
 
 .welcome {
