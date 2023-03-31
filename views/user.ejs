@@ -1,0 +1,22 @@
+<%- include("../partials/header")%>
+
+<%=p.name%>
+<a href="/pokemon/<%=p._id%>"><img
+src="<%=p.sprite%>" alt="<%=p.name%>"></a>
+
+
+        <input type="text" name="name" class=""></input>
+        </label><br>
+        <button type="submit" class="new-button">Next</button>
+
+        <% if (user.Favourite) {%>
+            <%=p.sprite%>
+            <% }else {<img src="https://i.imgur.com/HddtBOT.png" alt="who">} %> 
+
+
+
+        <h1>
+            <%=user.name%>'s Favourite Pokemon
+        </h1>
+
+        <%- include("../partials/footer")%>

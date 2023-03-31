@@ -1,7 +1,31 @@
 Teamname == The Mac
 ---------------------------------------------------------
-Work for Friday - favourite pokemon + shiny sprites
-if possible, banner filter.
+DEBUG - enter team accepts null value
+---------------------------------------------------------
+
+Work for Friday -
+-> favourite pokemon|| General page set up. 
+Holding image of "who's that pokemon" when favourite pokemon = null (code for that needs to be written). 
+input field for favourite pokemon set up, however does nothing. 
+must add to schema for an "avatar" and generate image on banner + user page.
+page itself not linked
+
+-> shiny sprites.on the code that generates image. 
+random num generator between 1-1000.
+
+controllers/pokemon.js
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+getRandomInt(10)
+
+if getRandomInt === 1 {
+    sprite: response.data.sprites.front_shiny
+} else response.data.sprites.front_default
+
+
+-> banner filter.
 ---------------------------------------------------------
 color codes for banner;
 
