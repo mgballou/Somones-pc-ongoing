@@ -11,7 +11,7 @@ must add to schema for an "avatar" and generate image on banner + user page.
 page itself not linked
 
 -> shiny sprites.on the code that generates image. 
-random num generator between 1-1000.
+random num generator between 1-10 (can be anything but smaller number so it actually triggers).
 
 controllers/pokemon.js
 

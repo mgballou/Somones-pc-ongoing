@@ -17,3 +17,6 @@ https://www.mongodb.com/docs/manual/reference/method/db.collection.insertMany/#e
 
 if statements in controller show
 https://laracasts.com/discuss/channels/laravel/using-if-statement-in-controller-show-method
+
+If statments to change CSS [change class with if]
+https://stackoverflow.com/questions/2446812/css-equivalent-of-the-if-statement
