@@ -6,7 +6,9 @@ const usersCtrl = require("../controllers/users")
 // router.get('/', function(req, res, next) {
 //   res.send('respond with a resource');
 // });
-router.get("/users/:id", usersCtrl.show)
+router.get("/:id", usersCtrl.show)
+
+router.put('/:id', usersCtrl.update)
 
 
 module.exports = router;

@@ -5,7 +5,7 @@ const User = require("../models/User")
 let endpoint 
 
 module.exports = {
-    addFavoritePokemon,
+    update: addFavoritePokemon,
     show
 }
 
@@ -14,6 +14,7 @@ function addFavoritePokemon(req, res){
     endpoint = req.body.favorite.toLowerCase()
     axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
     .then(function(response){
+        console.log(response)
         foundPokemon = {
              name: response.data.name,
              types: response.data.types,
@@ -21,10 +22,10 @@ function addFavoritePokemon(req, res){
         }
         return foundPokemon
     } ).then(function (foundPokemon){
-        User.findById(req.User._id)
+        User.findById(req.user._id)
         .then(function(foundUser){
-            User.favorite=foundPokemon
-            return User.save()
+            foundUser.favorite=foundPokemon
+            return foundUser.save()
         })
         res.redirect(`/users/${req.user._id}`)
     }).catch(function (err){

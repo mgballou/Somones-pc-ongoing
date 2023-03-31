@@ -1,20 +1,21 @@
 <%- include("../partials/header")%>
 
-<!-- <h1>Welcome to {USERNAME}'s PC.</h1> -->
-
-
+<fieldset class="fence">
+<fieldset class="daycare">
 <% pokemon.forEach(p => { %>
     <p> <%if (p.nickname !== ''){ %>
         "<%=p.nickname%>" the <%=p.name%>
         <%} else {%>
             <%=p.name%>
             <%}%></p>
+     <img src="<%=p.sprite%>">       
     <a href="/pokemon/<%=p._id%>">Pokemon Details</a>
     <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
     <button type="submit">Release Pokemon</button></form>
 <% }) %>
 
 
-<button><a href="/pokemon/new">Create New Pokemon</a></button>
+<button class="daycareBtn" ><a href="/pokemon/new"><img <a href="https://pokemondb.net/pokedex/moltres">Create New Pokemon</a></button>
+</fieldset>
 
 <%- include("../partials/footer")%>
