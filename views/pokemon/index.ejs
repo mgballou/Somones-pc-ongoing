@@ -10,6 +10,7 @@
             <%} else {%>
                 <%=p.name%>
                 <%}%></p>
+                
         <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
     <button type="submit">Release Pokemon</button></form>
     </div>

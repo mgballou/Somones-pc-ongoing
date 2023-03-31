@@ -36,7 +36,7 @@ function create(req, res) {
                 user: req.user._id,
                 sprite: response.data.sprites.front_default
             }
-            if (randomInt === 1) {
+            if (randomInt === 1 && foundPokemon.dexNumber <= 905) {
                 foundPokemon.sprite = response.data.sprites.front_shiny
             }
             Pokemon.create(foundPokemon)
@@ -116,7 +116,7 @@ function edit(req, res) {
 }
 
 function destroy(req, res) {
-    Pokemon.deleteOne(req.body.id)
+    Pokemon.deleteOne({_id: req.params.id})
         .then(function (results) {
             console.log(results)
             res.redirect('/pokemon')

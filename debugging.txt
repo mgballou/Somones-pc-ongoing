@@ -18,3 +18,13 @@ teams/id - showing name not nickname
 
 
 [1-1008]
+
+\D+|
+
+replace space with an underscore for the paradox pokemon
+
+extra space at the beginning or end of a string - trimmed
+space in the middle of a string, replaced with an underscore to get paradox pokemon
+
+
+can we force a full page reload when we redirect?
