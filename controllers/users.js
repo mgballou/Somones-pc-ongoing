@@ -10,6 +10,9 @@ module.exports = {
 }
 
 function addFavoritePokemon(req, res){
+    if (req.body.name > 1008){
+        res.redirect(`/users/${req.user._id}`)
+    }
     let foundPokemon
     endpoint = req.body.favorite.toLowerCase()
     axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
