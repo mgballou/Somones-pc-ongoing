@@ -18,35 +18,40 @@ function create(req, res) {
     // console.log(req.body)
     // let pokeArray = Object.values(req.body)
     let foundPokemon
+    let randomInt = Math.floor(Math.random() * 10)
+    
     // console.log(pokeArray)
 
-    if (typeof(req.body) !== Number){
+    if (typeof (req.body) !== Number) {
         endpoint = req.body.name.toLowerCase()
 
     } else {
         endpoint = req.body.name
     }
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
-            .then(function (response) {
-                foundPokemon = {
-                    name: response.data.name,
-                    dexNumber: response.data.id,
-                    sprite: response.data.sprites.front_default,
-                    user: req.user._id,
-                }
-                Pokemon.create(foundPokemon)
-            })
-            .then(function (newPokemon) {
-                console.log(newPokemon)
-                res.redirect('/pokemon')
-            })
-            .catch(function(err){
-                console.log(err)
-                res.redirect('/pokemon/new')
-            })
-                
-   
-   
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
+        .then(function (response) {
+            foundPokemon = {
+                name: response.data.name,
+                dexNumber: response.data.id,
+                user: req.user._id,
+                sprite: response.data.sprites.front_default
+            }
+            if (randomInt === 1) {
+                foundPokemon.sprite = response.data.sprites.front_shiny
+            }
+            Pokemon.create(foundPokemon)
+        })
+        .then(function (newPokemon) {
+            console.log(newPokemon)
+            res.redirect('/pokemon')
+        })
+        .catch(function (err) {
+            console.log(err)
+            res.redirect('/pokemon/new')
+        })
+
+
+
 
 }
 
@@ -69,7 +74,7 @@ function removePokemon(req, res) {
 }
 
 function update(req, res) {
-    
+
     Pokemon.findById(req.params.id)
         .then(function (foundPokemon) {
             foundPokemon.nickname = req.body.nickname
@@ -94,26 +99,26 @@ function index(req, res) {
 }
 
 
-function newPokemon(req, res){
-    res.render('pokemon/new', {title: 'Create a new pokemon'})
+function newPokemon(req, res) {
+    res.render('pokemon/new', { title: 'Create a new pokemon' })
 }
 
-function edit(req, res){
-    Pokemon.findById({_id: req.params.id})
-    .then(function(pokemon){
-        // console.log(pokemon)
-        res.render('pokemon/edit', {pokemon, title: "Edit Pokemon Details"})
-    })
-    .catch(function(err){
-        console.log(err)
-        res.redirect('/pokemon')
-    })
+function edit(req, res) {
+    Pokemon.findById({ _id: req.params.id })
+        .then(function (pokemon) {
+            // console.log(pokemon)
+            res.render('pokemon/edit', { pokemon, title: "Edit Pokemon Details" })
+        })
+        .catch(function (err) {
+            console.log(err)
+            res.redirect('/pokemon')
+        })
 }
 
-function destroy(req, res){
+function destroy(req, res) {
     Pokemon.deleteOne(req.body.id)
-    .then(function(results){
-        console.log(results)
-        res.redirect('/pokemon')
-    })
+        .then(function (results) {
+            console.log(results)
+            res.redirect('/pokemon')
+        })
 }

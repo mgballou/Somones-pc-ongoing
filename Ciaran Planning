@@ -15,15 +15,18 @@ random num generator between 1-1000.
 
 controllers/pokemon.js
 
+let randomInt = Math.floor(Math.random() * 10)
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 getRandomInt(10)
 
-if getRandomInt === 1 {
-    sprite: response.data.sprites.front_shiny
-} else response.data.sprites.front_default
-
+if (getRandomInt === 1) {
+    foundPokemon.sprite = response.data.sprites.front_shiny
+} else {
+    foundPokemon.sprite = response.data.sprites.front_default
+}
 
 -> banner filter.
 
