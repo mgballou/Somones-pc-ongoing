@@ -30,6 +30,7 @@ function create(req, res) {
     }
     axios.get(`https://pokeapi.co/api/v2/pokemon/${endpoint}`)
         .then(function (response) {
+            response.data.name[0].toUpperCase()
             foundPokemon = {
                 name: response.data.name,
                 dexNumber: response.data.id,
