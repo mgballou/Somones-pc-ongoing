@@ -19,7 +19,7 @@ function addFavoritePokemon(req, res) {
         .then(function (response) {
             foundPokemon = {
                 name: response.data.name,
-                types: response.data.types[0].type.name,
+                type: response.data.types[0].type.name,
                 sprite: response.data.sprites.front_default
             }
             return foundPokemon
