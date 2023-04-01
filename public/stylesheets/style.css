@@ -382,7 +382,11 @@ a:link {
 #text {
   font-weight: bold;
   justify-content: center;
+}
+
+#textInput {
   text-align: center;
+
 }
 
 #logout>a{
