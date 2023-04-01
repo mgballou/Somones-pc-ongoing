@@ -37,9 +37,5 @@ function addFavoritePokemon(req, res) {
 }
 
 function show(req, res) {
-    // let user 
-    // User.findById(req.user._id)
-    // .then(function (foundUser){
-    // })
-    res.render("users/show", { title: "userPage" })
+   res.render("users/show", { title: "userPage" })
 }

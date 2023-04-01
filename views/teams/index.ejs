@@ -1,10 +1,6 @@
 <%- include("../partials/header")%>
 
-    <!-- <h1>Welcome to {USERNAME}'s PC.</h1> -->
-
-    <!-- <div class="teamImg">
-<img height="150px" width="150px" class ="img-teams" src ="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
-</div> -->
+ 
 
 <% teams.forEach(t=> { %>
     <div class="eachTeam">
@@ -28,7 +24,7 @@
                         <% }) %>
                 </div>
 
-                <!-- <button><a href="/teams/<%=t._id%>">Team Details</a></button> -->
+                
         </div>
 
         <div id="deleteTeam">
@@ -37,8 +33,8 @@
             </form>
         </div>
 
+        <% }) %>
     </div>
-    <% }) %>
 
     <button class="createNewTeam"><a href="/teams/new">Create New Team</a></button>
 
