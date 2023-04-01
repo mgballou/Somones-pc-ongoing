@@ -1,29 +1,45 @@
 <%- include("../partials/header")%>
 
-<!-- <h1>Welcome to {USERNAME}'s PC.</h1> -->
+    <!-- <h1>Welcome to {USERNAME}'s PC.</h1> -->
 
-<!-- <div class="teamImg">
+    <!-- <div class="teamImg">
 <img height="150px" width="150px" class ="img-teams" src ="https://64.media.tumblr.com/641ec476865c68bb4f6f7bf6928c1d5c/tumblr_pevr8icX581vw1ceco1_1280.pnj">
 </div> -->
 
-<div class="eachTeam">
-    <div class="sprite">
-        <% teams.forEach(t => { %>
-            <p id="sprite"><a href="/teams/<%=t._id%>">Team Details</a><%=t.name%></p>
-            <%t.pokemon.forEach(p => { %>
-                <img src="<%=p.sprite%>">
-                <% }) %>
-                
+    <div class="eachTeam">
+        <div class="sprite">
+            <% teams.forEach(t=> { %>
+                <div id="sprite">
+                    <div class="details">
+                        <p height="30px" width="30px"><a href="/teams/<%=t._id%>">
+                                <img id="details"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAclBMVEX///8AAAB3d3eLi4uHh4dzc3MlJSVfX1/8/PwRERH5+fnY2NgODg5YWFjFxcXc3Nyamprj4+McHBzr6+vS0tIoKCizs7MXFxc9PT0fHx/u7u5HR0ddXV2urq7KysptbW2goKCSkpIzMzNPT09DQ0O8vLyYGZ9cAAADqklEQVR4nO2d23KiQBRFjfcraMBbTIzR5P9/ccbJZGyEKtLdC5ohe70SN2cVAi2Hyul0hBBCCCGEEC1mmr4se/2a6C1f0mkVFnF/91A7u34Ma2wCWPx12YAa0TmUxpXzEdKYvobUuDJATpZV0MPxyXnl7zF7DG1xZT/z9Yi3oR0+2XpevpJhaIMvhk9eIofQ9d+4+Hi8ha7eZOnukcxDF28ySZxFcjeQ4WLQrYnBInd6DqgDMvK+BtqRjrL7n7sekn72aFArBQuO+0wJPceYtRmydv+GepBka3ALmWXONGCR4MJqYlbhdldcmhEntDwLTmYVbldg81RzPKgAY/PiNXKKMH9L9eHyLDAvOTunBHO5GOCK9UVklPHolGDeRfxWbF48GWXMnRLMswwuzoaxdx0NEfGvQyIwEsECICSCBUBIBAuAkAgWACERLABCIlgAhESwAAiJYAEQEsECIKoTSbrm07/54f7dhHTk1QkedrPPyysTiSYPd4zG5vbl/WZrtlEdInFBP87sJW28Pe6e/Vclsija8+15/xhpaD9XLzIt3PHtIXdUuN2W+bSsDm+RtHDHi3/b/c+QP8zK6pDIF635atVzso/K6/AWKbr8do3t/83ltxPl3nzK3hBP95ut2R6/U4e3yO8litn9nlw+7j4481uirLvZ/lh1IjUjESwAQiJYAIREsAAIiWABEBLBAiAkggVASAQLgJAIFgAhESwAQiJYAIREsAAIiZQGJAP1EL+HeohWIuoh2qAe4g8Uac1XSz1EG9RDtBJRD9ERiWABEBLBAiAkggVASAQLgJAIFgAhESwAQiJYAIREsAAIiWABEBLBAiAkggVASKQ0oLyH6PWfXNVDtBT5MT3EfdF2W9RD/L5Ia1pvrRFpzVdLPUQbmtFDBG6I6iHaidSMRLAACIlgARASwQIgJIIFQEgEC4CQCBYAIREsAEIiWACERLAAiLaI+A+JaM3YjtYMUmnNaBtz2NBwXP731QAMG2rG+KdMFW7jnxoxkCsGBnI1YUTaKlPD2TElO7RuH5V/giZihtblxgimaJWlHJ+z+3ceI5gf7Li/vA5q4vWSaw87D3bsJLlXA0Iy8VheQJ1NhpO7R6dzCV39Da9xtJ2nxgwIXnuuW5sysvnR+4Y8Q94t8WXoOXr6ShPGmu+QZcV0ENqjS6290135zqpjRy4oPt5DaRzuu/i+rHrvtY/Unh96lfx6GMeb01uvJt5OmzjYz1IhhBBCCCFEHfwCmkNGp9FFp0kAAAAASUVORK5CYII=">
+                                <!-- Team Details -->
+                            </a>
+                    </div>
+                    <div class="teamName">
+                        <%=t.name%>
+                            </p>
+                    </div>
+                </div>
+                <div id="spriteRow">
+                    <%t.pokemon.forEach(p=> { %>
+                        <img src="<%=p.sprite%>">
+                        <% }) %>
+                </div>
+
                 <!-- <button><a href="/teams/<%=t._id%>">Team Details</a></button> -->
+        </div>
+
+        <div id="deleteTeam">
+            <form action="/teams/<%=t._id%>?_method=DELETE" method="post">
+                <button type="submit" class="dt">Delete team</button>
+            </form>
+        </div>
+
+        <% }) %>
     </div>
 
-    <form action="/teams/<%=t._id%>?_method=DELETE" method="post">
-        <button type="submit">Delete team</button>
-    </form>
-    
-<% }) %>
-</div>
+    <button class="createNewTeam"><a href="/teams/new">Create New Team</a></button>
 
-<button><a href="/teams/new">Create New Team</a></button>
-
-<%- include("../partials/footer")%>
+    <%- include("../partials/footer")%>

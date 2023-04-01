@@ -52,19 +52,22 @@ a:link {
 .view {
   border: double black 6px;
   background-color: white;
-  /* min-width: 490px; */
   box-shadow: 3px 3px 5px;
 }
 
 .daycare {
   display: flex;
   flex-flow: row wrap;
-  /* border: solid black 3px; */
   min-height: 290px;
   min-width: 490px;
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLmA4OhHKNT0y0mAmTYgNWp1OVI_m6__uFA&usqp=CAU);
   background-size: 493px 300px;
 }
+
+.daycareSprite {
+  display: grid;
+}
+
 
 .fence {
   display: grid;
@@ -165,16 +168,22 @@ a:link {
 
 
 /* IMAGE AND FORM teams/new VIEW */
-.img, .new-img-form {
+.new-img-form {
   display: flex;
-  height: auto;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLmA4OhHKNT0y0mAmTYgNWp1OVI_m6__uFA&usqp=CAU);
+  background-size: contain;
+  height: 100%;
   width: auto;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 /* teams/new FORM CLASS */
 .new-form {
-  margin: 75px 100px 0 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 100%; */
+  margin: 70px 50px;
 }
 
 .new-button {
@@ -182,16 +191,22 @@ a:link {
   justify-content: center;
   background-color: red;
   color: white;
-  margin: 2px;
+  /* margin: 2px 60px; */
   padding: 2px 20px;
   border: solid black 2px;
   border-radius: 10px;
 }
 
 /* INPUT FIELD ON teams/new */
+.new-input-div {
+  display: flex; 
+  align-items: center;
+}
+
 .new-input {
-  margin: 10px 0 0 0;
-  padding: 10px;
+  align-content: center;
+  margin: 10px 20px 0 40px;
+  padding: 5px;
   font-size: 16px;
 }
 
@@ -347,14 +362,23 @@ a:link {
 }
 
 .eachTeam {
-  
+  display: grid;
+}
+
+.dt {
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px;
 }
 
 .sprite {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  /* display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
   border: solid black 2px;
-  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  margin: 5px 0;
+  margin: 5px 2px;
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 2px 2px 5px;
 }
 
 .sprite>img {
@@ -363,15 +387,63 @@ a:link {
   width: 50px;
 }
 
+.details {
+  height: 40px;
+  width: 40px;
+}
+
+.details>p {
+  margin: 0;
+}
+
+.teamName>p {
+  margin: 0;
+}
+
+.createNewTeam {
+  border-radius: 0 15px 0 0;
+  border: solid black 2px;
+}
+
+.createNewTeam>a {
+  color: black;
+}
+
+#deleteTeam {
+  display: flex;
+  justify-content: center;
+}
+
 #sprite {
   display: grid;
-  grid-template-columns: [first] 40% [line2] 60% [line3];
+  grid-template-columns: [first] 30% [line2] 70% [line3];
   column-gap: 2px;
   justify-items: center;
   align-items: center;
   margin: 0;
-  border: groove black 1px;
-  padding: 5px;
+  border-bottom: groove black 2px;
+  padding: 5px 50px;
+  background-color: red;
+  border-radius: 48px 48px 0 0;
+}
+
+#spriteRow {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin: 0 50px;
+  
+}
+
+#spriteRow>img {
+  height: 45px;
+  width: 45px;
+}
+
+
+#details {
+  height: 40px;
+  width: 40px;
 }
 
 #dexInput {
@@ -460,7 +532,7 @@ a:link {
 #team-name {
   font-family: 'Press Start 2P', cursive;
   font-size: 20px;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 #input {
