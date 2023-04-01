@@ -57,7 +57,7 @@ a:link {
 
 .daycare {
   display: flex;
-  justify-content: center;
+  justify-content: centergit;
   flex-flow: row wrap;
   min-height: 290px;
   min-width: 490px;
