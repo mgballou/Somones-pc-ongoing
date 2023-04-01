@@ -341,9 +341,6 @@ a:link {
   padding: 5px;
 }
 
-.pokeNew>input {
-  border: solid black 2px;
-}
 .teamImg {
   display: flex;
   width: 100%;
@@ -385,13 +382,7 @@ a:link {
 #text {
   font-weight: bold;
   justify-content: center;
-}
-
-/* #dexInput */
-#text>input {
-  align-items: center;
   text-align: center;
-  border: solid black 2px;
 }
 
 #logout>a{
