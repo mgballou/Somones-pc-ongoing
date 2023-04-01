@@ -9,59 +9,80 @@
 
             <div class="pokeTeam">
                 <%if (p.nickname !=='' ){ %>
-                    "<%=p.nickname%>"
-                        <%} else {%>
-                            <%=p.name%>
-                                <%}%>
+                "<%=p.nickname%>"
+                <%} else {%>
+                <%=p.name%>
+                <%}%>
 
-                                    <a href="/pokemon/<%=p._id%>"><img src="<%=p.sprite%>" alt="<%=p.name%>"></a>
+            <div class="pokeStats">               
+                <%if (p.type2) {%>
+                    <p><%=p.type1.toUpperCase()%> / <%=p.type2.toUpperCase() %></p>
+                <% } else { %>
+                    <p><%=p.type1.toUpperCase() %></p>
+                <% } %>
+
+                <p><%=p.abilities.current.toUpperCase()%></p>
+                <%if (p.heldItem) {%>
+                    <p>@<%=p.heldItem%></p>
+                <% } else { %>
+                    <p>None</p>
+                <% } %>
+                    <p>HP:</p><p><%=p.stats[0].values.base%></p>
+                    <p>ATK:</p><p><%=p.stats[1].values.base%></p>
+                    <p>DEF:</p><p><%=p.stats[2].values.base%></p>
+                    <p>SpATK:</p><p><%=p.stats[3].values.base%></p>
+                    <p>SpDEF:</p><p><%=p.stats[4].values.base%></p>
+                    <p>SPEED:</p><p><%=p.stats[5].values.base%></p> 
+
+            </div>
+            <a href="/pokemon/<%=p._id%>"><img src="<%=p.sprite%>" alt="<%=p.name%>"></a>
 
             </div>
 
             <% }) %>
                 <!-- <div class="show-form">
 
-            <form action="/teams/<%=team._id%>/pokemon" method="POST">
+            <form action="/teams/<%=team._id%>/p" method="POST">
 
                 <div class="pokeTeamName">Team: </div>
 
                 <div class="pokeTeam">#1: Kabuto
-                    <a href="https://pokemondb.net/pokedex/kabuto"><img
-                            src="https://img.pokemondb.net/sprites/black-white/anim/normal/kabuto.gif" alt="Kabuto"></a>
-                    <input type="text" name="pokemon1" id="input">
+                    <a href="https://pdb.net/pokedex/kabuto"><img
+                            src="https://img.pdb.net/sprites/black-white/anim/normal/kabuto.gif" alt="Kabuto"></a>
+                    <input type="text" name="p1" id="input">
                 </div>
 
                 <div class="pokeTeam">#2: Charizard
-                    <a href="https://pokemondb.net/pokedex/charizard"><img height="43px" width="41px"
-                            src="https://img.pokemondb.net/sprites/black-white/anim/shiny/charizard.gif"
+                    <a href="https://pdb.net/pokedex/charizard"><img height="43px" width="41px"
+                            src="https://img.pdb.net/sprites/black-white/anim/shiny/charizard.gif"
                             alt="Charizard"></a>
-                    <input type="text" name="pokemon2" id="input">
+                    <input type="text" name="p2" id="input">
                 </div>
 
-                <div class="pokeTeam">Pokemon #3:
+                <div class="pokeTeam">p #3:
                     <a href=""><img height="43px" width="41px"></a>
-                    <input type="text" name="pokemon3" id="input">
+                    <input type="text" name="p3" id="input">
                 </div>
 
-                <div class="pokeTeam">Pokemon #4:
+                <div class="pokeTeam">p #4:
                     <a href=""><img height="43px" width="41px"></a>
-                    <input type="text" name="pokemon4" id="input">
+                    <input type="text" name="p4" id="input">
                 </div>
 
-                <div class="pokeTeam">Pokemon #5:
+                <div class="pokeTeam">p #5:
                     <a href=""><img height="43px" width="41px"></a>
-                    <input type="text" name="pokemon5" id="input">
+                    <input type="text" name="p5" id="input">
                 </div>
 
-                <div class="pokeTeam">Pokemon #6:
+                <div class="pokeTeam">p #6:
                     <a href=""><img height="43px" width="41px"></a>
-                    <input type="text" name="pokemon6" id="input">
+                    <input type="text" name="p6" id="input">
                 </div>
 
                 <div class="two-buttons">
                     <button type="submit"><img class="edit-img"
                             src="https://www.kindpng.com/picc/m/716-7168753_icon-button-edit-png-transparent-png.png"></button>
-                    <button type="sumbit" name="addPokemon" class="show-button">Add Pokemon</button>
+                    <button type="sumbit" name="addp" class="show-button">Add p</button>
                 </div>
 
             </form>

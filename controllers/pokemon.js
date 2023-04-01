@@ -34,7 +34,31 @@ function create(req, res) {
                 name: response.data.name,
                 dexNumber: response.data.id,
                 user: req.user._id,
-                sprite: response.data.sprites.front_default
+                sprite: response.data.sprites.front_default,
+                type1: response.data.types[0].type.name,
+                stats: response.data.stats.map(statRecord => {
+                    statName = statRecord.stat.name
+                    baseStat = statRecord.base_stat
+                    return {
+                        statName: statName,
+                        values: {
+                            base: baseStat,
+                            effort: 0,
+                            individual: 0
+                        }
+                    }
+                }),
+                abilities: {
+                    current: response.data.abilities[0].ability.name,
+                    all: response.data.abilities.map(abilityRecord => {
+                        return abilityRecord.ability.name
+                    })
+                }
+            }
+            if (response.data.types.length > 1) {
+                foundPokemon.type2 = response.data.types[1].type.name
+            } else {
+                foundPokemon.type2 = ''
             }
             if (randomInt === 1 && foundPokemon.dexNumber <= 905) {
                 foundPokemon.sprite = response.data.sprites.front_shiny
@@ -49,10 +73,6 @@ function create(req, res) {
             console.log(err)
             res.redirect('/pokemon/new')
         })
-
-
-
-
 }
 
 
@@ -78,6 +98,8 @@ function update(req, res) {
     Pokemon.findById(req.params.id)
         .then(function (foundPokemon) {
             foundPokemon.nickname = req.body.nickname
+            foundPokemon.abilities.current = req.body.ability
+            foundPokemon.heldItem = req.body.heldItem
             return foundPokemon.save()
         })
         .then(function () {
@@ -123,7 +145,7 @@ function destroy(req, res) {
                 team.pokemon.pull(req.params.id)
                 team.save()
             })
-            return 
+            return
 
         })
 

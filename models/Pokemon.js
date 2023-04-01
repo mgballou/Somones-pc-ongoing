@@ -18,15 +18,14 @@ const pokemonSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
-    types: {},
-    learnset: {},
-    moveset: { type: [String], default: [''] },
+    type1: String,
+    type2: String,
     abilities: {
         current: { type: String, default: '' },
-        all: {}
+        all: Array
     },
     stats: {},
-    heldItem: {type: String, default: ''},
+    heldItem: { type: String, default: '' },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 
 }
