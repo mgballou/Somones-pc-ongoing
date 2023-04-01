@@ -1,21 +1,18 @@
 <%- include("../partials/header")%>
 
-    <!-- FORM -->
-    <div class="poke-new-form">
+    <div class="pokeNewImg">
+        <!-- IMAGE ADD USING CSS -->
+    </div>
+        <div>
+            <form class="pokeNew" action="/pokemon" method="POST">
+                <label id="text">Enter poke' Name/ Dex Number:
+                    <div id="dexInput"><input type="text" name="name" required
+                            pattern="(\D+|[1-9]|[1-9][0-9]|[1-9][0-9][0-9]|100[0-8])"></input></div>
+                </label>
 
+                <button class="new-button" type="submit">Next</button>
 
-
-        
-            <div class="">
-
-
-                
-                <form class="" action="/pokemon" method="POST">
-                    <label id="">Enter poke' Name/ Dex Number:
-                    <input type="text" name="name" class="" required pattern="(\D+|[1-9]|[1-9][0-9]|[1-9][0-9][0-9]|100[0-8])"></input>
-                    </label><br>
-                    <div id="newBtn"><button class="new-button" type="submit">Next</button></div>
-                </form>
-            </div>
+            </form>
+        </div>
 
     <%- include("../partials/footer")%>

@@ -179,12 +179,13 @@ a:link {
 
 .new-button {
   display: flex;
-  background-color: red;
-  border: red;
-  color: white;
-  border-radius: 5px;
-  padding: 2px;
   justify-content: center;
+  background-color: red;
+  color: white;
+  margin: 2px;
+  padding: 2px 20px;
+  border: solid black 2px;
+  border-radius: 10px;
 }
 
 /* INPUT FIELD ON teams/new */
@@ -324,7 +325,8 @@ a:link {
 .pokeNewImg {
   min-height: 290px;
   min-width: 490px;
-  background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--ULVfV0eF--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gdt6r96u6aotmhmindri.png);
+  background-image: url(https://external-preview.redd.it/1CnIhgclEdJIlkFuBZGEbCTKA0epd5X2u7hrtuOFm8s.png?width=640&crop=smart&auto=webp&s=f520337854210ac39b4e3f4916b2ecffd0366536);
+  /* background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--ULVfV0eF--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gdt6r96u6aotmhmindri.png); */
   background-size: 500px 350px;
   box-shadow: 2px 2px 2px 2px black inset;
 
@@ -333,16 +335,15 @@ a:link {
 .pokeNew {
   display: flex;
   border: double black 6px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5px;
 }
 
-.newForm>input {
-  margin: 5px 0 0 10px;
-  /* if pokeNew doesnt work out */
+.pokeNew>input {
+  border: solid black 2px;
 }
-
 .teamImg {
   display: flex;
   width: 100%;
@@ -376,16 +377,6 @@ a:link {
   padding: 5px;
 }
 
-#newBtn {
-  display: flex;
-  justify-content: center;
-  border: solid black 1px;
-  background-color: red;
-  box-shadow: 3px 3px 4px;
-  margin: 2px 50px;
-  border-radius: 10px;
-}
-
 #dexInput {
   display: flex;
   justify-content: center;
@@ -393,11 +384,14 @@ a:link {
 
 #text {
   font-weight: bold;
+  justify-content: center;
 }
 
-#dexInput>input {
-  border: solid black 2px;
+/* #dexInput */
+#text>input {
+  align-items: center;
   text-align: center;
+  border: solid black 2px;
 }
 
 #logout>a{
