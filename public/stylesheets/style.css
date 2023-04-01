@@ -57,6 +57,7 @@ a:link {
 
 .daycare {
   display: flex;
+  justify-content: center;
   flex-flow: row wrap;
   min-height: 290px;
   min-width: 490px;
@@ -193,6 +194,7 @@ a:link {
   color: white;
   /* margin: 2px 60px; */
   padding: 2px 20px;
+  margin: 5px;
   border: solid black 2px;
   border-radius: 10px;
 }
@@ -205,6 +207,7 @@ a:link {
 
 .new-input {
   align-content: center;
+  text-align: center;
   margin: 10px 20px 0 40px;
   padding: 5px;
   font-size: 16px;
@@ -343,17 +346,18 @@ a:link {
   background-image: url(https://external-preview.redd.it/1CnIhgclEdJIlkFuBZGEbCTKA0epd5X2u7hrtuOFm8s.png?width=640&crop=smart&auto=webp&s=f520337854210ac39b4e3f4916b2ecffd0366536);
   /* background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--ULVfV0eF--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gdt6r96u6aotmhmindri.png); */
   background-size: 500px 350px;
-  box-shadow: 2px 2px 2px 2px black inset;
+  border-top: solid black 1px;
 
 }
 
 .pokeNew {
   display: flex;
-  border: double black 6px;
+  border: solid black 1px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5px;
+  background-color: rgb(251, 232, 185);
 }
 
 .teamImg {
@@ -361,20 +365,20 @@ a:link {
   width: 100%;
 }
 
-.eachTeam {
+.team-1 {
   display: grid;
+  margin: 3px;
 }
 
 .dt {
   border-radius: 10px;
   box-shadow: 2px 2px 5px;
+  margin: 0 0 5px 0;
 }
 
 .sprite {
   display: flex;
   flex-direction: column;
-  /* display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
   border: solid black 2px;
   margin: 5px 2px;
   border-radius: 50px 50px 50px 50px;
@@ -433,11 +437,6 @@ a:link {
   background-color: white;
   margin: 0 50px;
   
-}
-
-#spriteRow>img {
-  height: 45px;
-  width: 45px;
 }
 
 
