@@ -437,6 +437,7 @@ a:link {
   justify-content: center;
   background-color: white;
   margin: 0 50px;
+  min-height: 45px;
 
 }
 
