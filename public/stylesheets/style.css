@@ -351,6 +351,10 @@ a:link {
 
 }
 
+.form-container {
+  position: relative;
+}
+
 .pokeNew {
   display: flex;
   border: solid black 1px;
@@ -359,6 +363,12 @@ a:link {
   justify-content: center;
   padding: 5px;
   background-color: rgb(251, 232, 185);
+}
+
+.pokeRandom {
+  position: absolute;
+  bottom: 0;
+  margin: 5px;
 }
 
 .teamImg {
@@ -556,6 +566,9 @@ a:link {
   width: 75%;
 }
 
+#next-poke-new {
+  align-self: flex-end;
+}
 
 #normal {
   background-image: none;
