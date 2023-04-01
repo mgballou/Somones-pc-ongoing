@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  border: solid blue 1px;
+  /* border: solid blue 1px; */
 }
 
 
@@ -349,16 +349,31 @@ a:link {
 }
 
 .eachTeam {
-  display: ;
+  
 }
 
 .sprite {
+  display: grid;
+  border: solid black 2px;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 5px 0;
+}
+
+.sprite>img {
   display: flex;
+  height: 64px;
+  width: 50px;
 }
 
 #sprite {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: [first] 40% [line2] 60% [line3];
+  column-gap: 2px;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  border: groove black 1px;
+  padding: 5px;
 }
 
 #newBtn {
