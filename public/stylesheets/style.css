@@ -343,6 +343,24 @@ a:link {
   /* if pokeNew doesnt work out */
 }
 
+.teamImg {
+  display: flex;
+  width: 100%;
+}
+
+.eachTeam {
+  display: ;
+}
+
+.sprite {
+  display: flex;
+}
+
+#sprite {
+  display: flex;
+  justify-content: center;
+}
+
 #newBtn {
   display: flex;
   justify-content: center;
