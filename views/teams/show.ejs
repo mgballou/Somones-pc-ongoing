@@ -1,63 +1,123 @@
 <%- include('../partials/header')%>
 
-    <div class="show-img-form">
-
-        <div class="pokeTeamName">
-            <%=team.name%>
-        </div>
-        <% team.pokemon.forEach(p=> {%>
-
-            <div class="pokeTeam">
-                <%if (p.nickname !=='' ){ %>
-                "<%=p.nickname%>"
-                <%} else {%>
-                <%=p.name%>
-                <%}%>
-
-            <div class="pokeStats">               
-                <%if (p.type2) {%>
-                    <p><%=p.type1.toUpperCase()%> / <%=p.type2.toUpperCase() %></p>
-                <% } else { %>
-                    <p><%=p.type1.toUpperCase() %></p>
-                <% } %>
-
-                <p><%=p.abilities.current.toUpperCase()%></p>
-                <%if (p.heldItem) {%>
-                    <p>@<%=p.heldItem%></p>
-                <% } else { %>
-                    <p>None</p>
-                <% } %>
-                    <p>HP:</p><p><%=p.stats[0].values.base%></p>
-                    <p>ATK:</p><p><%=p.stats[1].values.base%></p>
-                    <p>DEF:</p><p><%=p.stats[2].values.base%></p>
-                    <p>SpATK:</p><p><%=p.stats[3].values.base%></p>
-                    <p>SpDEF:</p><p><%=p.stats[4].values.base%></p>
-                    <p>SPEED:</p><p><%=p.stats[5].values.base%></p> 
-
-            </div>
-            <a href="/pokemon/<%=p._id%>"><img src="<%=p.sprite%>" alt="<%=p.name%>"></a>
-
-            </div>
-
-            <% }) %>
-                
+    <div id="list-wrapper">
+        <p>Select Your Team:</p>
     </div>
 
     <% if(team.pokemon.length> 5) { %>
 
         <% } else { %>
             <div class="list-wrapper">
-                <% allPokemon.forEach(p=> { %>
-                    <form action="/teams/<%=team._id%>?_method=PUT" method="POST">
-                        <input class="invisible-input" name="addPokemon" type="text" value="<%=p._id%>">
-                        <button type="submit"><img class="" src="<%= p.sprite %>"></button>
-                    </form>
-                    <% }) %>
+
+
+
+                <div class="addPoke">
+                    <% allPokemon.forEach(p=> { %>
+                        <form action="/teams/<%=team._id%>?_method=PUT" method="POST">
+                            <input class="invisible-input" name="addPokemon" type="text" value="<%=p._id%>">
+                            <button type="submit"><img height="65px" width="65px" src="<%= p.sprite %>"></button>
+                        </form>
+                        <% }) %>
+                </div>
             </div>
             <% } %>
 
 
+                <div class="pokeTeamName">
+                    <%=team.name%>
+                </div>
+              
+                <div class="user-team">
+
+                    <% team.pokemon.forEach(p=> {%>
+
+                        <div class="pokeTeam">
+                            <div class="poke-sprite">
+                                <div class="sprite-stats-one">
+                                    <div class="img-name">
+                                        <a href="/pokemon/<%=p._id%>"><img src="<%=p.sprite%>" alt="<%=p.name%>"></a>
+                                
+                                    <%if (p.nickname !=='' ){ %>
+                                    "<%=p.nickname%>"
+                                        <%} else {%>
+                                            <%=p.name%>
+                                                <%}%>
+                                    </div>
+
+                                                    <div class="pokeStats">
+                                                        <%if (p.type2) {%>
+                                                            <p>
+                                                                <%=p.type1.toUpperCase()%> / <%=p.type2.toUpperCase() %>
+                                                            </p>
+                                                            <% } else { %>
+                                                                <p>
+                                                                    <%=p.type1.toUpperCase() %>
+                                                                </p>
+                                                                <% } %>
+
+                                                                    <p>
+                                                                        <%=p.abilities.current.toUpperCase()%>
+                                                                    </p>
+                                                                    <%if (p.heldItem) {%>
+                                                                        <p>@<%=p.heldItem%>
+                                                                        </p>
+                                                                        <% } else { %>
+                                                                            <p>None</p>
+                                                                            <% } %>
+                                                    </div>
+                                </div>         
+                                            <div class="poke-stats">
+                                                    <div class="poke-stat">
+                                                        <p id="HP">HP:</p>
+                                                        <p id="HPstat">
+                                                            <%=p.stats[0].values.base%>
+                                                        </p>
+                                                    </div>
+                                                    <div class="poke-stat">
+                                                        <p id="ATK">ATK:</p>
+                                                        <p id="ATKstat">
+                                                            <%=p.stats[1].values.base%>
+                                                        </p>
+                                                    </div>
+                                                    <div class="poke-stat">
+                                                        <p id="DEF">DEF:</p>
+                                                        <p id="DEFstat">
+                                                            <%=p.stats[2].values.base%>
+                                                        </p>
+                                                    </div>
+                                                    <div class="poke-stat">
+                                                        <p id="SPATK">SpATK:</p>
+                                                        <p id="SPATKstat">
+                                                            <%=p.stats[3].values.base%>
+                                                        </p>
+                                                    </div>
+                                                    <div class="poke-stat">
+                                                        <p ID="SPDEF">SpDEF:</p>
+                                                        <p id="SPDEFstat">
+                                                            <%=p.stats[4].values.base%>
+                                                        </p>
+                                                    </div>
+                                                    <div class="poke-stat">
+                                                        <p id="SPEED">SPEED:</p>
+                                                        <p id="SPEEDstat">
+                                                            <%=p.stats[5].values.base%>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                            </div>
+
+
+                        </div>
+                </div>
+
+                <% }) %>
+                    
 
 
 
-                <%- include('../partials/footer') %>
+
+
+
+
+                    <%- include('../partials/footer') %>

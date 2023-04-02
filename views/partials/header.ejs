@@ -31,14 +31,12 @@
             <% if (user.favorite) {%>
             <div class="nav-global" id="<%=user.favorite.type%>">
                     <a href="/users/<%=user._id%>">
-                    <img class="user-sprite" src="<%=user.favorite.sprite%>"><%=user.name%></a>
+                    <img height="58px" width="58px" class="user-sprite" src="<%=user.favorite.sprite%>"><%=user.name%>
             <% }else {%> 
         
                 <div class="nav-global">
-                    <a href="/users/<%=user._id%>">
-                    <img src="https://pokemondb.net/pokedex/bulbasaur" alt="bulbasaur"><%=user.name%>
-                    </a>
-                    <%} %>
+                    <a href="/users/<%=user._id%>"></a><%=user.name%></a>
+                        <%} %>
                 
                     <a href="/pokemon">BOX</a>
 
