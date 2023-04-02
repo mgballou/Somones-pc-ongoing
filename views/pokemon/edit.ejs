@@ -4,7 +4,8 @@
     <div class="poke-edit-form">
 
 
-        <div class="">
+        <div class="edit-name">
+
             <p>
                 <%if (pokemon.nickname !=='' ){ %>
                     "<%=pokemon.nickname%>" the <%=pokemon.name%>
@@ -12,39 +13,79 @@
                                 <%=pokemon.name%>
                                     <%}%>
             </p>
-            <img src="<%=pokemon.sprite%>">
-            <div>
-                <h3>Type:</h3>
-                <%if (pokemon.type2) {%>
-                    <p><%=pokemon.type1.toUpperCase()%> / <%=pokemon.type2.toUpperCase() %></p>
-                <% } else { %>
-                    <p><%=pokemon.type1.toUpperCase() %></p>
-                <% } %>
+        </div>
+            <div class="edit-top">
 
-                <h3>Ability:</h3>
-                <p><%=pokemon.abilities.current.toUpperCase()%></p>
-                <h3>Item:</h3>
-                <%if (pokemon.heldItem) {%>
-                    <p><%=pokemon.heldItem%></p>
-                <% } else { %>
-                    <p>None</p>
-                <% } %>
-                <h3>Base Stats</h3>
-                <div>
-                    <p>HP:</p><p><%=pokemon.stats[0].values.base%></p>
-                    <p>ATK:</p><p><%=pokemon.stats[1].values.base%></p>
-                    <p>DEF:</p><p><%=pokemon.stats[2].values.base%></p>
-                    <p>SpATK:</p><p><%=pokemon.stats[3].values.base%></p>
-                    <p>SpDEF:</p><p><%=pokemon.stats[4].values.base%></p>
-                    <p>SPEED:</p><p><%=pokemon.stats[5].values.base%></p>                    
+                <div class="edit-pokemon">
+                    <img height="134px" width="134px" src="<%=pokemon.sprite%>">
+                </div>
+                <div class="trio">
+                    <div class="type">
+
+                    <h3>Type:</h3>
+                    <%if (pokemon.type2) {%>
+                        <p>
+                            <%=pokemon.type1.toUpperCase()%> / <%=pokemon.type2.toUpperCase() %>
+                        </p>
+                        <% } else { %>
+                            <p>
+                                <%=pokemon.type1.toUpperCase() %>
+                            </p>
+                            <% } %>
+                    </div>
+
+                    <div class="ability">
+                        <h3>Ability:</h3>
+                        <p>
+                        <%=pokemon.abilities.current.toUpperCase()%>
+                        </p>
+                    </div>
+                    <div class="item">
+                    <h3>Item:</h3>
+                    <%if (pokemon.heldItem) {%>
+                        <p>
+                            <%=pokemon.heldItem%>
+                        </p>
+                        <% } else { %>
+                            <p>None</p>
+                            <% } %>
+                    </div>
                 </div>
             </div>
-            
+       
+            <div class="edit-bottom">
+                <h3>Base Stats</h3>
+                <p>HP:</p>
+                <p>
+                    <%=pokemon.stats[0].values.base%>
+                </p>
+                <p>ATK:</p>
+                <p>
+                    <%=pokemon.stats[1].values.base%>
+                </p>
+                <p>DEF:</p>
+                <p>
+                    <%=pokemon.stats[2].values.base%>
+                </p>
+                <p>SpATK:</p>
+                <p>
+                    <%=pokemon.stats[3].values.base%>
+                </p>
+                <p>SpDEF:</p>
+                <p>
+                    <%=pokemon.stats[4].values.base%>
+                </p>
+                <p>SPEED:</p>
+                <p>
+                    <%=pokemon.stats[5].values.base%>
+                </p>
+            </div>
 
 
 
-            <form class="" action="/pokemon/<%=pokemon._id%>?_method=PUT" method="POST">
-                            
+
+            <form class="edit name" action="/pokemon/<%=pokemon._id%>?_method=PUT" method="POST">
+
 
 
 
@@ -60,9 +101,11 @@
                 </label>
                 <label>Change Ability
                     <select name="ability" id="">
-                        <%pokemon.abilities.all.forEach(a => {%>
-                            <option value="<%=a%>"><%=a.toUpperCase()%></option>
-                        <% }) %>                        
+                        <%pokemon.abilities.all.forEach(a=> {%>
+                            <option value="<%=a%>">
+                                <%=a.toUpperCase()%>
+                            </option>
+                            <% }) %>
                     </select>
                 </label>
                 <button type="submit" class="new-button">Save</button>
@@ -70,7 +113,7 @@
 
 
 
-        </div>
+        
     </div>
 
     <%- include("../partials/footer")%>

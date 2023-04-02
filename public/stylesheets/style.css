@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  border: solid blue 1px;
+  /* border: solid blue 1px; */
 }
 
 
@@ -53,6 +53,7 @@ a:link {
   border: double black 6px;
   background-color: white;
   box-shadow: 3px 3px 5px;
+  overflow: scroll;
 }
 
 .daycare {
@@ -63,6 +64,7 @@ a:link {
   min-width: 490px;
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLmA4OhHKNT0y0mAmTYgNWp1OVI_m6__uFA&usqp=CAU);
   background-size: 493px 300px;
+  
 }
 
 .daycareSprite {
@@ -425,6 +427,78 @@ a:link {
 
 .createNewTeam>a {
   color: black;
+}
+
+.poke-edit-form {
+  display: flex;
+  flex-direction: column;
+}
+.poke-stuff {
+  display: flex;
+  flex-direction: column;
+}
+
+.type, .ability, .item {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-name {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  border: solid black 2px;
+}
+
+.edit-name>p {
+  margin: 0;
+}
+
+.edit-top {
+  display: flex;
+  justify-content: center;
+  border-top: single black 6px;
+  border-bottom: double black 6px;
+}
+
+.trio {
+  display: grid;
+  grid-template-columns: [first] 80% [end];
+  grid-template-rows: auto;
+  margin: 0 0 0 10px;
+  border-left: solid black 2px;
+  width: 320px;
+}
+
+.type>h3, .ability>h3, .item>h3 {
+  margin: 0 20px 0 0;
+  padding: 5px;
+
+}
+
+.type>p, .ability>p, .item>p {
+  margin: auto;
+  
+}
+
+.type {
+  justify-content: flex-start;
+  /* padding: 0 50px 0 0;
+  justify-content: space-between; */
+}
+
+.ability {
+  justify-content: flex-start;
+  /* padding: 0 10px 0 0;
+  justify-content: space-between; */
+}
+
+.item {
+  justify-content: flex-start;
+  /* padding: 0 38px 0 0;
+  justify-content: space-between; */
 }
 
 #deleteTeam {
