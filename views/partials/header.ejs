@@ -31,11 +31,11 @@
             <% if (user.favorite) {%>
             <div class="nav-global" id="<%=user.favorite.type%>">
                     <a href="/users/<%=user._id%>">
-                    <img height="58px" width="58px" class="user-sprite" src="<%=user.favorite.sprite%>"><%=user.name%>
+                    <img height="58px" width="58px" class="user-sprite" src="<%=user.favorite.sprite%>"><%=user.name%></a>
             <% }else {%> 
         
                 <div class="nav-global">
-                    <a href="/users/<%=user._id%>"></a><%=user.name%></a>
+                    <a href="/users/<%=user._id%>"><%=user.name%></a>
                         <%} %>
                 
                     <a href="/pokemon">BOX</a>
