@@ -11,7 +11,6 @@ body {
   border: solid black 4px;
   margin: 0;
   padding: 10px 2%;
-  /* background-color: white; */
   background-color:rgb(124, 9, 9);
  } 
 
@@ -35,7 +34,7 @@ a:link {
   column-gap: 10px;
   border: solid black 2px;
   background-color: rgb(124, 9, 9);
-  /* box-shadow: 3px 3px; */
+  
 }
 
 .left {
@@ -53,6 +52,8 @@ a:link {
 .view {
   border: double black 6px;
   background-color: white;
+  /* min-width: 490px; */
+  box-shadow: 3px 3px 5px;
 }
 
 .daycare {
@@ -89,12 +90,14 @@ a:link {
 .welcome {
   display: flex;
   font-family: 'Press Start 2P', cursive;
-  font-size: 5px;
+  font-size: 20px;
+  justify-content: center;
+  align-content: center;
   align-items: center;
   height: auto;
   width: auto;
   margin: 0;
-  padding: 10px 0 0 40px;
+  padding: 10px;
   border: black 6px;
   border-style: double;
   background-color: white;
@@ -175,10 +178,13 @@ a:link {
 }
 
 .new-button {
-  margin: 10px 0 0 75px;
+  display: flex;
   background-color: red;
+  border: red;
   color: white;
-  border-radius: 15px;
+  border-radius: 5px;
+  padding: 2px;
+  justify-content: center;
 }
 
 /* INPUT FIELD ON teams/new */
@@ -313,6 +319,51 @@ a:link {
   border: black 6px;
   border-style: double;
   background-color: white;
+}
+
+.pokeNewImg {
+  min-height: 290px;
+  min-width: 490px;
+  background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--ULVfV0eF--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gdt6r96u6aotmhmindri.png);
+  background-size: 500px 350px;
+  box-shadow: 2px 2px 2px 2px black inset;
+
+}
+
+.pokeNew {
+  display: flex;
+  border: double black 6px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.newForm>input {
+  margin: 5px 0 0 10px;
+  /* if pokeNew doesnt work out */
+}
+
+#newBtn {
+  display: flex;
+  justify-content: center;
+  border: solid black 1px;
+  background-color: red;
+  box-shadow: 3px 3px 4px;
+  margin: 2px 50px;
+  border-radius: 10px;
+}
+
+#dexInput {
+  display: flex;
+  justify-content: center;
+}
+
+#text {
+  font-weight: bold;
+}
+
+#dexInput>input {
+  border: solid black 2px;
 
 }
 
@@ -367,6 +418,12 @@ a:link {
   padding: 2px 0 4px 40px;
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLmA4OhHKNT0y0mAmTYgNWp1OVI_m6__uFA&usqp=CAU);
   background-size: 100px 70px;
+}
+
+#title {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 #nav {

@@ -1,25 +1,15 @@
 <%- include("../partials/header")%>
+<div class="pokeNewImg">
+    <!-- IMAGE ADDED USING CSS -->
+</div>
 
-    <!-- FORM -->
-    <div class="poke-new-form">
-
-        <div class="">
-            <form class="" action="/pokemon" method="POST">
-                      <input type="text" name="name" class="invisible-input" value = "<%= Math.floor(Math.random()* 1008)%>">
-                    </input>
-                </label><br>
-                <button type="submit" class="new-button">Random Pokemon</button>
-            </form>
-
-            <form class="" action="/pokemon" method="POST">
-                <label id="">Enter poke' Name/ Dex Number:
-                    <input type="text" name="name" class="" required
-                        pattern="(\D+|[1-9]|[1-9][0-9]|[1-9][0-9][0-9]|100[0-8])"></input>
-                </label><br>
-                <button type="submit" class="new-button">Next</button>
-            </form>
-        </div>
-
-    </div>
+            <div class="pokeNew">
+                <form class="newForm" action="/pokemon" method="POST">
+                    <label id="text">Enter poke' Name/ Dex Number:<br>
+                    <div id="dexInput"><input type="text" name="name" class="" required pattern="(\D+|[1-9]|[1-9][0-9]|[1-9][0-9][0-9]|100[0-8])"></input></div>
+                    </label><br>
+                    <div id="newBtn"><button class="new-button" type="submit">Next</button></div>
+                </form>
+            </div>
 
     <%- include("../partials/footer")%>
