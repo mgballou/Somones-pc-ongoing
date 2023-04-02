@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  /* border: solid blue 1px; */
+  border: solid blue 1px;
 }
 
 
@@ -66,7 +66,19 @@ a:link {
 }
 
 .daycareSprite {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+}
+
+.daycareSprite>p {
+  padding: 0 0 0 45px;
+  margin: 0 0 3px 0;
+}
+
+.daycare-sprite {
+  padding: 0 0 0 23px;
 }
 
 
@@ -229,6 +241,8 @@ a:link {
   padding: 30px;
   border: black 6px;
   background-color: white;
+  background-size: contain;
+
   
 }
 
