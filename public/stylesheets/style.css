@@ -446,20 +446,21 @@ a:link {
 .edit-name {
   display: flex;
   justify-content: center;
-  margin: 10px;
   font-size: 24px;
   font-weight: bold;
-  border: solid black 2px;
+  border-top: solid black 2px;
+  border-bottom: solid black 2px;
 }
 
 .edit-name>p {
   margin: 0;
+  padding: 10px;
 }
 
 .edit-top {
   display: flex;
   justify-content: center;
-  border-top: single black 6px;
+  border-top: single black 2px;
   border-bottom: double black 6px;
 }
 
@@ -467,7 +468,7 @@ a:link {
   display: grid;
   grid-template-columns: [first] 80% [end];
   grid-template-rows: auto;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 20px;
   border-left: solid black 2px;
   width: 320px;
 }
@@ -483,23 +484,86 @@ a:link {
   
 }
 
-.type {
+.type, .ability, .item {
   justify-content: flex-start;
-  /* padding: 0 50px 0 0;
-  justify-content: space-between; */
 }
 
-.ability {
-  justify-content: flex-start;
-  /* padding: 0 10px 0 0;
-  justify-content: space-between; */
+.edit-bottom {
+  padding: 10px;
 }
 
-.item {
-  justify-content: flex-start;
-  /* padding: 0 38px 0 0;
-  justify-content: space-between; */
+.edit-bottom>h3 {
+  justify-content: center;
 }
+
+.stat {
+  display: flex;
+  border: solid black 2px;
+  border-style: 1px 0 0 1px inset black;
+
+}
+
+.base-stat {
+  border: solid black 2px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 4px;
+}
+
+.all-stats {
+  box-shadow: 2px 2px 4px;
+}
+
+.editName {
+  display: grid;
+  grid-template-rows: 1fr;
+  align-content: space-between;
+}
+
+.change {
+  margin: 10px;
+}
+
+#base-stats {
+text-align: center;
+border: single black 6px;
+padding: 5px;
+margin: 0;
+}
+
+#hp {
+  margin: 0 0 0 45px;
+  padding: 20px 0 0 0;
+}
+
+#atk {
+  margin: 0 0 0 38px;
+  padding: 20px 0 0 0;
+}
+
+#def {
+  margin: 0 0 0 38.5px;
+  padding: 20px 0 0 0;
+}
+
+#spatk {
+  margin: 0 0 0 20px;
+  padding: 20px 0 0 0;
+}
+
+#spdef {
+  margin: 0 0 0 19.5px;
+  padding: 20px 0 0 0;
+}
+
+#speed {
+  margin: 0 0 0 19.5px;
+  padding: 20px 0 0 0;
+}
+
+#one, #two, #three, #four, #five, #six {
+  padding: 20px 0 0 0;
+  margin-left: 10px;
+} 
 
 #deleteTeam {
   display: flex;
