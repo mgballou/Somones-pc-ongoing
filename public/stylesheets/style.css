@@ -175,11 +175,11 @@ a:link {
 }
 
 /* DIV CONTAINER FOR IMG AND FORM teams/new */
-.show-img-form {
+/* .show-img-form {
   display: grid;
   max-height: 80vh;
   grid-template-columns: [first] 40% [line2] 60%;
-}
+} */
 
 
 /* IMAGE AND FORM teams/new VIEW */
@@ -272,23 +272,27 @@ a:link {
 }
 
 .pokeTeamName {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
   font-family: 'Press Start 2P', cursive;
   padding: 10px;
   font-size: 20px;
-  border: black solid 2px;
+  border: black double 6px;
 }
 
 .pokeTeam {
-  /* display: flex; */
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  display: grid;
+  /* justify-content: space-between; */
+  /* display: grid;
   grid-template-columns: [first] 30% [line2] 10% [line3] auto;
-  column-gap: 10px;
+  column-gap: 10px; */
   font-family: 'Press Start 2P', cursive;
   font-size: 10px;
   padding: 5px;
-
 }
 
 .pokeTeam>button {
@@ -329,17 +333,23 @@ a:link {
 
 .list-wrapper {
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   gap: 8px;
-
   width: 100%;
   padding: 0px .5em;
-
-  border: 2px solid #B8C0C2;
-  border-radius: 8px;
+  border: 2px solid black;
+  overflow: scroll;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLmA4OhHKNT0y0mAmTYgNWp1OVI_m6__uFA&usqp=CAU);
+  background-image: contain;
 }
 
+.addPoke {
+
+  display: flex;
+  flex-flow: row wrap;
+
+}
 .invisible-input {
   visibility: hidden;
   width: 0px;
@@ -360,7 +370,6 @@ a:link {
   min-height: 290px;
   min-width: 490px;
   background-image: url(https://external-preview.redd.it/1CnIhgclEdJIlkFuBZGEbCTKA0epd5X2u7hrtuOFm8s.png?width=640&crop=smart&auto=webp&s=f520337854210ac39b4e3f4916b2ecffd0366536);
-  /* background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--ULVfV0eF--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gdt6r96u6aotmhmindri.png); */
   background-size: 500px 350px;
   border-top: solid black 1px;
 
@@ -521,6 +530,93 @@ a:link {
 
 .change {
   margin: 10px;
+}
+
+.sprite-stats-one {
+  display: flex;
+  justify-content: center;
+}
+
+.poke-sprite {
+  width: 100%;
+  padding: 10px;
+}
+
+.poke-stat {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border: solid black 2px;
+  box-shadow: 2px 0 5px;
+}
+
+.poke-stat>p {
+  justify-content: space-between;
+  margin: 0;
+}
+
+.poke-stats {
+  padding: 0 10px 10px 10px;
+  
+}
+
+.img-name {
+  margin: 0 25px 0 0;
+  padding: 20px;
+  justify-content: center;
+
+}
+.pokeStats {
+  padding: 10px;
+  width: 52.5%;
+  
+  /* border: solid black 2px;
+  box-shadow: 2px 0 5px; */
+}
+
+#HP, #ATK, #DEF, #SPATK, #SPDEF, #SPEED {
+    padding: 10px;
+    margin: 0;
+}
+
+#HPstat {
+  margin: 0 0 0 50px;
+}
+
+#ATKstat {
+  margin: 0 0 0 41px;
+}
+
+#DEFstat {
+  margin: 0 0 0 41px;
+}
+
+#SPATKstat {
+  margin: 0 0 0 22px;
+}
+
+#SPDEFstat {
+  margin: 0 0 0 22px;
+}
+
+#SPEEDstat {
+  margin: 0 0 0 22px;
+}
+
+#list-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  
+  border: double black 6px;
+}
+#list-wrapper>p{
+  padding: 10px;
+  display: block;
+  /* height: 30px; */
+  margin: 0;
+  font-weight: bold;
+  
 }
 
 #base-stats {
