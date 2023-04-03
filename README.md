@@ -3,6 +3,8 @@ The Best Pokemon Box system ever invented
 
 An app that can be used to create, name and store your teams and Pokemon.
 
+https://shrouded-meadow-86905.herokuapp.com/
+
 Once you have loaded up the app, please log in. This ensures that all features are available for you to enjoy.
 
 First, you'll want to click on your username. Once there, you will be able to select your favorite Pokemon. Look out for them on the navigation bar! 
