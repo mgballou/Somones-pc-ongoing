@@ -1,21 +1,28 @@
 <%- include("../partials/header")%>
-
-       <form action = "/users/<%=user._id%>?_method=PUT" method = "POST">
-        <input type="text" name="favorite" class=""required pattern="(\D+|[1-9]|[1-9][0-9]|[1-9][0-9][0-9]|100[0-8])"></input>
-        </label><br>
-        <button type="submit" class="new-button">Next</button>
-    </form>
-    
+<div class="fav-name">
+<h1>
+    <%=user.name%>'s Favorite Pokemon
+</h1>
+</div>
+       
+    <div class="favorite-image">
         <% if (user.favorite) {%>
-            <img src="<%=user.favorite.sprite%>">           
+            <img height="50px" width="50px" src="<%=user.favorite.sprite%>">           
             <% } else {%>                 
-                <img id="whosthat" src="https://i.imgur.com/HddtBOT.png" alt="who">
+                <div class="whosthat"><img width="100%" height="100%" src="https://i.imgur.com/HddtBOT.png" alt="who">
                 <%} %> 
+                </div>
+    </div>
+            <div class="form-favorite">
+                <form action = "/users/<%=user._id%>?_method=PUT" method = "POST">
+                    <input type="text" name="favorite" class="fav-input" required pattern="(\D+|[1-9]|[1-9][0-9]|[1-9][0-9][0-9]|100[0-8])"></input>
+                    </label><br>
+                    <button type="submit" class="new-button">Next</button>
+                </form>
+            </div>
 
                 
 
-        <h1>
-            <%=user.name%>'s Favorite Pokemon
-        </h1>
+        
 
         <%- include("../partials/footer")%>

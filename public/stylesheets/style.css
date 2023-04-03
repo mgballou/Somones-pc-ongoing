@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  /* border: solid blue 1px; */
+  border: solid blue 1px;
 }
 
 
@@ -207,9 +207,8 @@ a:link {
   justify-content: center;
   background-color: red;
   color: white;
-  /* margin: 2px 60px; */
   padding: 2px 20px;
-  margin: 5px;
+  margin: 5px auto;
   border: solid black 2px;
   border-radius: 10px;
 }
@@ -580,9 +579,42 @@ a:link {
 .pokeStats {
   padding: 10px;
   width: 52.5%;
-  
-  /* border: solid black 2px;
-  box-shadow: 2px 0 5px; */
+}
+
+.fav-name {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: double black 6px;
+  margin: 0;
+}
+
+.fav-name>h1 {
+  margin: 0;
+}
+
+.favorite-image {
+  display: flex;
+  background-image: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.form-favorite {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  border: double black 6px;
+}
+
+.fav-input {
+  text-align: center;
+
+}
+
+.whosthat {
+  display: flex;
+  background-image: contain;
 }
 
 #HP, #ATK, #DEF, #SPATK, #SPDEF, #SPEED {
