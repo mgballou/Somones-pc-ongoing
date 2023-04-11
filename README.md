@@ -20,3 +20,7 @@ Want more information on your Pokemon? Click on their sprite to be taken to thei
 Ready for battle? Head over to "View Teams" and select "Create New Team". This will take you to a page to first name your team, then set up your team ready to take on the Pokemon world. Click the edit button to select up to 6 Pokemon for your party by selecting their sprite. Be aware, that as these are unique Pokemon you can only add each individual to your party once. If you want a dream team of 6 Bulbasaur in your party (because who wouldn't?) make sure that you create 6 Bulbasaur on the Pokemon creation page. Once you click the sprite, they will be removed from the list of available Pokemon and will instead be moved below into your team so that you can see how they stack un, enabling you to truly create your dream team.
 
 Created by Matthew Ballou, Anthony Blalock and Ciaran Kearney
+
+
+
+*Ongoing development version
